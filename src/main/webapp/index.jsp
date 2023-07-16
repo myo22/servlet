@@ -8,6 +8,6 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<a href="hello-servlet">반갑습니다 접니다.</a>
+<a href="hello-servlet">반갑습니다 접니다. 네 저에요</a>
 </body>
 </html>
