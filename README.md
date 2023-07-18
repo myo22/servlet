@@ -122,7 +122,55 @@ HelloServlet을 실행
 
 ---
 
+## Plus Form
+
+- http://localhost:8080/
+   - / ==> /index.jsp를 요청하는 것과 같다.
+   - http://localhost:8080/index.jsp
+
+![img_4.png](img_4.png)
+
+---
+
+## Plus Form
+webapp/index.jsp  ---> webapp/form/index.jsp로 옮겼다.
+
+http://localhost:8080/form/
+http://localhost:8080/form/index.jsp
 
 
+---
+
+## Plus Form
+
+ - submit을 하면
+    - http://localhost:8080/form/plus?x=20&y=40
+ - action="plus" 상대경로 plus
+    - http://localhost:8080/form/ + plus
+    - http://localhost:8080/plus <-- 원래 이게 호출되어야함.
+
+            <form method="get" action="plus">
+                x : <input type="text" name="x"><br>
+                y : <input type="text" name="y"><br>
+                <input type="submit" value="plus">
+            </form>
+
+get방식으로 action에 있는 곳으로 전달하라는 뜻
+
+---
+
+- submit을 하면
+    - http://localhost:8080/form/plus?x=20&y=40
+- action="/plus" 절대경로 plus
+    - http://localhost:8080 + /plus
+    - http://localhost:8080/plus <-- 원래 이게 호출되어야함.
+
+            <form method="get" action="/plus">
+                x : <input type="text" name="x"><br>
+                y : <input type="text" name="y"><br>
+                <input type="submit" value="plus">
+            </form>
+
+---
 
 
