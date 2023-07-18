@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="서블리에서 JSP로 포워딩하기">
-      <change afterPath="$PROJECT_DIR$/img_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="서블릿에서 JSP로 포워딩하기">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +165,7 @@
       <workItem from="1689518425890" duration="202000" />
       <workItem from="1689569213915" duration="2557000" />
       <workItem from="1689580136692" duration="4005000" />
-      <workItem from="1689651853120" duration="3125000" />
+      <workItem from="1689651853120" duration="3383000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -209,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689658830078</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="서블릿에서 JSP로 포워딩하기">
+      <option name="closed" value="true" />
+      <created>1689659798925</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689659798925</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +226,7 @@
     <MESSAGE value="Servlet" />
     <MESSAGE value="PlusServlet" />
     <MESSAGE value="서블리에서 JSP로 포워딩하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="서블리에서 JSP로 포워딩하기" />
+    <MESSAGE value="서블릿에서 JSP로 포워딩하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="서블릿에서 JSP로 포워딩하기" />
   </component>
 </project>
