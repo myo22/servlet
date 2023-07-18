@@ -9,9 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Servlet">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/servletexam/PlusServlet.java" afterDir="false" />
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="PlusServlet">
+      <change afterPath="$PROJECT_DIR$/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/plus.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/servletexam/PlusServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/servletexam/PlusServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -58,6 +62,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\develop\workspace\servletexam\src\main\webapp" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.91" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.91" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
@@ -159,7 +168,7 @@
       <workItem from="1689518425890" duration="202000" />
       <workItem from="1689569213915" duration="2557000" />
       <workItem from="1689580136692" duration="4005000" />
-      <workItem from="1689651853120" duration="1115000" />
+      <workItem from="1689651853120" duration="2040000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -185,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689584672403</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PlusServlet">
+      <option name="closed" value="true" />
+      <created>1689657756323</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689657756323</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +211,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="웹 어플리케이션 기본" />
     <MESSAGE value="Servlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Servlet" />
+    <MESSAGE value="PlusServlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="PlusServlet" />
   </component>
 </project>
