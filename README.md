@@ -177,5 +177,54 @@ get방식으로 action에 있는 곳으로 전달하라는 뜻
 
 ---
 
+## 서블릿에서 서블릿 인스턴스를 생성하는 것은 누구일까?
+
+    Book b1 = new Book();
+
+    - Tomcat 이라는 WAS가 인스턴스를 생성
+    - /hello 요청을 받으면, 해당 PATH를 처리하는 서블릿이 메모리에 있느냐?
+        HelloServlet hello = new HelloServlet();
+        hello.init();
+    - 메모리에 있다면 
+        hello.service(req, resp);
+            hello.doGet(req, resp);
+
+---
+
+## Spring 프레임 워크에서 Bean?
+
+ - Spring 컨테이너가 관리하는 객체(인스턴스)
+
+---
+
+- 즉 요약하자면 서블릿은 Tomcat이 관리하는 객체이고 Bean은 스프링이 관리하는 객체이다.
+- 우리를 대신하여 인스턴스를 생성하고 라이프사이클을 관리해주는 것이다.
+
+---
+
+## Spring으로 웹어플리케이션을 만들기
+ 
+war 파일 ----> Tomcat서버 배포
+
+    ------ WEB-INF --- classes 
+                    --- 개발자가 만든 package, calss들(spring설정class)
+                --- lib --- spring과 관련된 각종jar파일(외부 라이브러리 파일)
+                --- web.xml -> java.config(버전이 올라감에따라)
+                --- 각종 리소스, hello.png // 즉 포워딩하는 경로로는 접근할 수 있다.
+    ------ 각종 이미지, jsp, logo.png
+
+http://localhost:8080/logo.png 바로 접근이 가능하지만.
+
+WEB-INF 폴더 밑에 있는 리소스는
+http://localhost:8080/WEB-INF/hello.png 이거는 접근할 수 없다.
+
+---
+
+
+
+
+
+
+
 
 
