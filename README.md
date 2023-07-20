@@ -261,7 +261,7 @@ http://localhost:8080/WEB-INF/hello.png 이거는 접근할 수 없다.
 
 ---
 
-# 이미지를 호출한다.
+ ## 이미지를 호출한다.
 
  http://localhost:8080 + Context Path(우린 /로 설정) + PATH (/img.png) ? 파라미터들
 
@@ -269,18 +269,70 @@ http://localhost:8080/WEB-INF/hello.png 이거는 접근할 수 없다.
 
 ---
 
-             /img.png                        / (단일진입점)
-        브라우저 ---------> Tomcat -----> 서블릿(DispatcherServlet) ---> ApplicationContext ---> Bean( Controller("/img.png") )
-                                                                                                  지금 이게 없으니까 404오류가 뜨는 것이다.
----
+ ## 이미지와 JSP를 호출
+
+ http://localhost:8080/i mg.png
+ http://localhost:8080/hello.jsp
 
              /img.png                        / (단일진입점)
+
         브라우저 ---------> Tomcat -----> 서블릿(DispatcherServlet) ---> ApplicationContext ---> Bean( Controller("/img.png") )
-                                                                  ---> Tomcat의 DefaultServlet ---> /webapp/                                 
+                                                                                                  지금 이게 없으니까 404오류가 뜨는 것이다.
+
+             /img.png                        / (단일진입점)
+
+        브라우저 ---------> Tomcat -----> 서블릿(DispatcherServlet) ---> ApplicationContext ---> Bean( Controller("/...") )
+                                                                 ----> Tomcat의 DefaultServlet ---> /webapp/img.png                                 
 
 하지만 Webconfig에서 configureDefaultServletHandling로 디폴트 서블릿을 추가해준다면 Controller("...")가 없으면 Tomcat의 DefaultServlet이 /img.png를 읽어들인다.
 
+
+             /hello.jsp                        / (단일진입점)
+
+        브라우저 ---------> Tomcat -----> 서블릿(DispatcherServlet) ---> ApplicationContext ---> Bean( Controller("/...) )
+                                                                 ----> Tomcat의 DefaultServlet ---> /hello.jsp           
 ---
 
+ ## JSP의 단점
 
+ - Java 코드가 실행된다. - 유지보수 X, 보안 X
+ - JSP = HTML + CSS가 섞여있다. ( 퍼블리셔, 프론트개발자 ) <- 자바코드가 섞여있어서 이 사람들이 처리하기도 곤란하고 보안에도 취약
+ - JSP는 최대한 Java코드를 줄인다.
+ - 결과는 Servlet or Controller에서 만들고 JSP에게 결과를 전달한다.
 
+---
+
+ ## Spring MVC는 여러개의 ViewResolver를 가질 수 있다.
+
+ - 스프링 컨테이너는 ViewResolver인터페이스를 구현하고 있는 Bean이 어떤 것들이 있는지 알 고 있다.
+ - ViewResolver인터페이스를 구현하는 Bean을 가질 수 있다.
+ - 이 사용자는 JSP를 사용하도록 설정하고 있다(Tomcat사용, build.gradle에서 JSP 설정). 그런데 Bean중에 InternalResourceViewResolver가 있다고?
+ - 그러면 컨트롤러가 리턴하는 문자열을 InternalResourceViewResolver가 동작하도록 한다.
+ - Servlet or Controller 로부터 포워딩 될 경우 사용
+
+            /hello                        / (단일진입점)
+
+        브라우저 ---------> Tomcat -----> 서블릿(DispatcherServlet) ---> ApplicationContext ---> Bean( Controller("/hello") ) 
+                                                                            -- 컨트롤러가 값을 리턴 --> InternalResourceViewResolver가 동작하며
+                                                                                                        /WEB-INF/view/hello.jsp 포워딩을 한다. 
+
+---
+
+ ## /WEB-INF 폴더는 외부에서 접근할 수 없다.
+
+ - /WEB-INF는 서버 내부에서 포워딩 할 수 있다.
+
+ /WEB-INF/view/hello.jsp
+ 
+ http://localhost:8080/WEB-INF/view/hello.jsp -> 404오류 (접근불가)
+ 
+---
+
+ ## Controller 와 ViewResolver
+
+ - Controller는 로직을 수행하여 결과를 만들어 낸다. ---> InternalResourceViewResolver ---> JSP는 결과를 출력만하도록 하자.
+ - Controller는 로직을 수행하여 결과를 만들어 낸다. ------>    BeanNameViewResolver   ------> Excel파일을 다운로드 할 수 있다.
+
+ 다양한 ViewResolver가 있다. 종류마다 조건이 다양하다.
+ 
+---
