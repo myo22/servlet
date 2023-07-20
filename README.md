@@ -252,15 +252,35 @@ http://localhost:8080/WEB-INF/hello.png 이거는 접근할 수 없다.
  - DispatcherServlet
 
                /hello                   /hello경로가 붙어있는 서블릿
-        브라우저 ---------> Tomcat -----> 서블릿
+        브라우저 ---------> Tomcat -----> 서블릿 , 정적파일(img.png, html, ....)
 
                /hello                         / (단일진입점)
-        브라우저 ---------> Tomcat -----> 서블릿(DispatcherServlet) ---> ApplicationContext 
-                                                            ---> Bean( Controller("/hello") )
+        브라우저 ---------> Tomcat -----> 서블릿(DispatcherServlet) ---> ApplicationContext ---> Bean( Controller("/hello") )
+
+가장 중요한 차이는 서블릿은 Tomcat이 관리하는건데  Bean은 스프링 컨테이너가 관리하기 때문에 다양한 작업을 수행해 줄 수 있다.
 
 ---
 
+# 이미지를 호출한다.
 
+ http://localhost:8080 + Context Path(우린 /로 설정) + PATH (/img.png) ? 파라미터들
+
+ 내 컴퓨터의 8080 서버에 접속.
+
+---
+
+             /img.png                        / (단일진입점)
+        브라우저 ---------> Tomcat -----> 서블릿(DispatcherServlet) ---> ApplicationContext ---> Bean( Controller("/img.png") )
+                                                                                                  지금 이게 없으니까 404오류가 뜨는 것이다.
+---
+
+             /img.png                        / (단일진입점)
+        브라우저 ---------> Tomcat -----> 서블릿(DispatcherServlet) ---> ApplicationContext ---> Bean( Controller("/img.png") )
+                                                                  ---> Tomcat의 DefaultServlet ---> /webapp/                                 
+
+하지만 Webconfig에서 configureDefaultServletHandling로 디폴트 서블릿을 추가해준다면 Controller("...")가 없으면 Tomcat의 DefaultServlet이 /img.png를 읽어들인다.
+
+---
 
 
 
