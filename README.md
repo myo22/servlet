@@ -336,3 +336,87 @@ http://localhost:8080/WEB-INF/hello.png 이거는 접근할 수 없다.
  다양한 ViewResolver가 있다. 종류마다 조건이 다양하다.
  
 ---
+
+DBMS안에는 여러개의 Database가 있을 수 있다.
+Database는 특정 사용자만 이용할 수 있다. 특정 사용자는 DBMS에서 관리되는 사용자를 말한다.
+Database안에는 Table을 생성한다. 회원정보는 회원Table에 저장, 상품정보는 상품Table에 저장
+
+---
+
+1. 내 컴퓨터에 DBMS를 설치한다. (첫번째 시간을 보면 Docker Desktop을 이용해서 MySQL을 실행한다.)
+2. Database를 생성
+3. Database를 이용하는 사용자 생성, 권한 부여
+4. Database에 여러 Table을 생성, 해당 Table에 값을 저장한다.
+
+---
+
+Database 프로그래밍
+
+1. SQL - SQL성능이 안나오면 실행계획을 볼 줄 알아야 한다. (튜닝)
+2. SQL을 이용해서 JDBC 프로그래밍 (데이터베이스 프로그래밍)
+3. Spring JDBC
+4. Spring Data JPA(ORM기술) - 직접 SQL을 사용하지 않아도 된다. (내부적으로 SQL을 생성하여 동작) - 어떤 SQL을 생성할 것인지를 예상할 수 있어야 한다.
+
+---
+
+
+브라우저 ----- /hello ------> Tomcat --/ (모든요청) --> DispatcherServlet ---> Controller("/hello") --> 결과 ---> JSP
+
+Controller의 메소드
+http요청, http응답 <- Controller가 하는 가장 중요한 일
+------------------
+
+하나의 컨트롤러는 여러개의 Service를 사용해서 어떤 결과를 만들어 낼 수 있다.
+
+                Service
+                비즈니스 로직을 수행
+                - 이자계산, 어떤 특정 사용자가 주문한 상품의 전체 가격을 구한다.
+                - 트랜잭션(Transaction)
+                    - 여러개의 DAO or Repository를 하나의 논리적인 작업단위로 실행할 수 있어야 한다.
+
+                                     DAO (Data Access Object), Repository - Data를 다루기 위한 객체
+                                JDBC프로그래밍을 좀 더 간결하게 하는 방법 -> 여러가지 중 대표적인것: Spring JDBC, Spring Data JPA(ORM기술), MyBatis
+                                데이터베이스 프로그래밍(JDBC 프로그래밍)  -- SQL ------>   DBMS (Database를 관리) - MySQL
+
+- DTO (Data Transfer Object) - 레이어를 넘나드는 객체
+- 브라우저 ----- /hello ------> Tomcat --/ (모든요청) --> DispatcherServlet ---> Controller("/hello") --> 결과 ---> JSP
+
+Controller의 메소드
+http요청, http응답 <- Controller가 하는 가장 중요한 일
+------------------
+하나의 컨트롤러는 여러개의 Service를 사용해서 어떤 결과를 만들어 낼 수 있다.
+
+                Service
+                비즈니스 로직을 수행
+                - 이자계산, 어떤 특정 사용자가 주문한 상품의 전체 가격을 구한다.
+                - 트랜잭션(Transaction)
+                    - 여러개의 DAO or Repository를 하나의 논리적인 작업단위로 실행할 수 있어야 한다.
+
+                                     DAO (Data Access Object), Repository - Data를 다루기 위한 객체
+                                JDBC프로그래밍을 좀 더 간결하게 하는 방법 -> 여러가지 중 대표적인것: Spring JDBC, Spring Data JPA(ORM기술), MyBatis
+                                데이터베이스 프로그래밍(JDBC 프로그래밍)  -- SQL ------>   DBMS (Database를 관리) - MySQL
+
+- DTO (Data Transfer Object) - 레이어를 넘나드는 객체
+  ![img_6.png](img_6.png)
+
+DBMS안에는 여러개의 Database가 있을 수 있다.
+Database는 특정 사용자만 이용할 수 있다. 특정 사용자는 DBMS에서 관리되는 사용자를 말한다.
+Database안에는 Table을 생성한다. 회원정보는 회원Table에 저장, 상품정보는 상품Table에 저장
+
+---
+
+1. 내 컴퓨터에 DBMS를 설치한다. (첫번째 시간을 보면 Docker Desktop을 이용해서 MySQL을 실행한다.)
+2. Database를 생성
+3. Database를 이용하는 사용자 생성, 권한 부여
+4. Database에 여러 Table을 생성, 해당 Table에 값을 저장한다.
+
+---
+
+Database 프로그래밍
+
+1. SQL - SQL성능이 안나오면 실행계획을 볼 줄 알아야 한다. (튜닝)
+2. SQL을 이용해서 JDBC 프로그래밍 (데이터베이스 프로그래밍)
+3. Spring JDBC
+4. Spring Data JPA(ORM기술) - 직접 SQL을 사용하지 않아도 된다. (내부적으로 SQL을 생성하여 동작) - 어떤 SQL을 생성할 것인지를 예상할 수 있어야 한다.
+
+---
