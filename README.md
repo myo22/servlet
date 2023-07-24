@@ -436,6 +436,14 @@ Persistence Context(영속성 관리자)
  
 ![img_9.png](img_9.png)
 
-엔티티는 하나지만 엔티티 매니저는 여러개가 존재한다. <- 동시에 돌아가면 안된다.
+엔티티는 하나지만 엔티티 매니저는 여러개가 존재한다. <- 쓰레드에 안전해야 하기 때문에 여러개 있어야함. 즉 필요할때 매니저를 만들어서 사용한다. -> EntityManagerFactory
 Entity, Persistence Context, Entity Manager, JPA Exception, Transaction <- 중요한 단어들
 이것들을 다 하나로 묶어서 편하게 사용하게 해주는 것이 Spring Data JPA입니다.
+
+![img_10.png](img_10.png)
+
+--- 
+
+![img_11.png](img_11.png)
+
+---
