@@ -420,3 +420,22 @@ Database 프로그래밍
 4. Spring Data JPA(ORM기술) - 직접 SQL을 사용하지 않아도 된다. (내부적으로 SQL을 생성하여 동작) - 어떤 SQL을 생성할 것인지를 예상할 수 있어야 한다.
 
 ---
+
+![img_7.png](img_7.png)
+
+---
+
+DB에 계속 연결하고 끊어지면 시간이 오래 걸리니까 DBMS랑 미리 연결한 객체를 많이 만든 것이다. -> 커넥션 객체
+커넥션 풀은 미리 커넥션을 연결해놓고 빌려온걸 끊는게 아니라 되돌려주는 매커니즘이다. -> 성능이 좋아진다.
+
+![img_8.png](img_8.png)
+
+---
+
+Persistence Context(영속성 관리자)
+ 
+![img_9.png](img_9.png)
+
+엔티티는 하나지만 엔티티 매니저는 여러개가 존재한다. <- 동시에 돌아가면 안된다.
+Entity, Persistence Context, Entity Manager, JPA Exception, Transaction <- 중요한 단어들
+이것들을 다 하나로 묶어서 편하게 사용하게 해주는 것이 Spring Data JPA입니다.
