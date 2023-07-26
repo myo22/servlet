@@ -447,3 +447,18 @@ Entity, Persistence Context, Entity Manager, JPA Exception, Transaction <- 중�
 ![img_11.png](img_11.png)
 
 ---
+
+## JSP에서 JSTL을 사용
+
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    taglib설정을 한다. jstl core라이브러리의 약자인 c를 네임스페이스로 사용한다.
+
+        List<ToDo> toDoList =  toDoService.getToDoList();
+        model.addAttribute("toDoList", toDoList);
+    위와 같이 컨트롤러가 값을 담아서 보냈다.
+    이때 items에는 model.addAttribute에 넣은 key값.
+    <c:forEach var="todo" items="${toDoList}" varStatus="status">
+        <p>${todo.todo}"/></p> // EL 표기법 todo가 참조하는 객체의 todo프로퍼티(getTodo())를 사용한다.
+    </c:forEach>
+
+---
