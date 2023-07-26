@@ -462,3 +462,12 @@ Entity, Persistence Context, Entity Manager, JPA Exception, Transaction <- 중�
     </c:forEach>
 
 ---
+
+브라우저 ------------- http://localhost/todos/list -------> ToDoController.list() 결과 ------------> list.jsp
+        <-----------------------------------------------------------------------------------------
+
+사용자가 할일을 입력, 버튼 클릭   -------Post방식 /todos/addToDo ----->              ToDoController.addToDo (값을 저장)
+        <---------------------- 상태코드 301, location응답해더 /todos/list -------
+
+자동요청  ------------- http://localhost/todos/list -------> ToDoController.list() 결과 ------------> list.jsp
+        <-----------------------------------------------------------------------------------------
