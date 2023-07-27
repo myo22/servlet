@@ -51,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/develop/workspace/springweb",
+    "last_opened_file_path": "C:/develop/workspace/servletexam",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -173,7 +173,8 @@
       <workItem from="1689949140158" duration="1779000" />
       <workItem from="1689952435044" duration="93000" />
       <workItem from="1690178944906" duration="4802000" />
-      <workItem from="1690333845292" duration="3054000" />
+      <workItem from="1690333845292" duration="3103000" />
+      <workItem from="1690434720595" duration="3599000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -295,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690340153592</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="스프링 웹 애플리케이션">
+      <option name="closed" value="true" />
+      <created>1690340640745</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1690340640745</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
