@@ -530,4 +530,18 @@ MySQL workbench (client)
 select version(), current_date; (SQL) --------- 전송 -------------> MYSQL DBMS (SQL 실행)
                                       <-------- 결과 --------------
 
+SQL
+
+- 테이블 생성, 테이블 삭제, 테이블 수정
+- 값을 저장, 수정, 삭제, 조회
+- 권한 부여, 데이터베이스 생성
+
+조회를 하려면 Data가 필요하다.
+
+Oracle DBMS - 예제 Database - HR 사용자 계정.
+
+MySQL 용으로 제작
+
+https://github.com/urstoryp/hr-schema-mysql/blob/master/hr-schema-mysql.sql
+
 ---

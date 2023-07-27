@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="스프링 웹 애플리케이션">
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="SQL부터 Spring Data JPA까지">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -174,7 +174,7 @@
       <workItem from="1689952435044" duration="93000" />
       <workItem from="1690178944906" duration="4802000" />
       <workItem from="1690333845292" duration="3103000" />
-      <workItem from="1690434720595" duration="3599000" />
+      <workItem from="1690434720595" duration="5624000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -304,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690340640745</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="SQL부터 Spring Data JPA까지">
+      <option name="closed" value="true" />
+      <created>1690444690710</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1690444690710</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,6 +332,7 @@
     <MESSAGE value="Database 프로그래밍" />
     <MESSAGE value="Spring Data JAP" />
     <MESSAGE value="스프링 웹 애플리케이션" />
-    <option name="LAST_COMMIT_MESSAGE" value="스프링 웹 애플리케이션" />
+    <MESSAGE value="SQL부터 Spring Data JPA까지" />
+    <option name="LAST_COMMIT_MESSAGE" value="SQL부터 Spring Data JPA까지" />
   </component>
 </project>
