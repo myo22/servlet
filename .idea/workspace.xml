@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="SQL부터 Spring Data JPA까지">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="SQL부터 Spring Data JPA까지" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +172,7 @@
       <workItem from="1690178944906" duration="4802000" />
       <workItem from="1690333845292" duration="3103000" />
       <workItem from="1690434720595" duration="5635000" />
-      <workItem from="1690511504411" duration="5047000" />
+      <workItem from="1690511504411" duration="5372000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -321,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690451415041</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="SQL부터 Spring Data JPA까지">
+      <option name="closed" value="true" />
+      <created>1690517946780</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1690517946780</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

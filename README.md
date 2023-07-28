@@ -674,3 +674,10 @@ https://github.com/urstoryp/hr-schema-mysql/blob/master/hr-schema-mysql.sql
         explain select concat(first_name, " ", last_name) as 이름, hire_date as 입사일 from employees where hire_date like '1989%';
 
 ---
+
+## 인덱스 목록 보기, 인덱스 삭제하기
+
+         show index from employees;
+        alter table employees drop index employees_hire_date_idx;
+
+---
