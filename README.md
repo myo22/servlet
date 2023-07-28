@@ -545,3 +545,132 @@ MySQL 용으로 제작
 https://github.com/urstoryp/hr-schema-mysql/blob/master/hr-schema-mysql.sql
 
 ---
+
+## SELECT 구문의 기본문형
+
+- SELECT(DISTINCT) 칼럼명(ALIAS) FROM 테이블명;
+- DISTINCT : 중복행을 제거
+- ALIAS : 나타날 컬럼에 대한 다른 이름 부여
+
+        select * from employees;
+
+---
+
+## 컬럼에 대한 ALIAS 부여
+
+- 컬럼에 대한 ALIAS(별칭)을 부여해서 나타내는 칼럼의 HEADING을 변경할 수 있다.
+- employees 테이블에서 직원의 이름, 입사일을 출력
+
+        select first_name as 이름 , last_name as 입사일 from employees;
+
+---
+
+## 컬럼의 합성
+
+- 문자열 결합함수 concat 사용
+- employees 테이블에서 직원의 전체이름, 입사일을 출력
+    
+        select concat(first_name, ' ', last_name) as 이름, hire_date as 입사일 from employees;
+
+---
+
+## 중복행의 제거
+
+        select distinct manager_id from employees;
+
+---
+
+## 결과를 정렬하고 싶을때
+
+- ORDER BY 절을 사용한다.
+- 오름차순 정렬 ASC, 내림차순 정렬 DESC
+
+        select first_name, last_name, hire_date, salary from employees order by hire_date desc;
+
+---
+
+## where와 함께 조회하기
+
+        select * from employees where last_name = "king";
+
+---
+
+## 특정 Row에 대한 select
+
+        select * from employees where hire_date > '1998-02-05' order by hire_date;
+
+        select * from employees where last_name = 'king' or hire_date > '1998-02-05' order by hire_date;
+
+        select * from employees where last_name = 'king' and hire_date > '1998-02-05' order by hire_date;
+
+---
+
+## NULL 다루기
+
+- NULL이 의미하는 것은 빈 값 또는 알 수 없는 값이다.
+- NULL인지 아닌지 확인 하기 위해, =, < 또는 <> 와 같은 산술 비교 연산자를 사용할 수 없다.
+- 대신에 IS NULL 그리고 IS NOT NULL 연산자를 사용해야 한다.
+        
+        select * from employees where commission_pct is null;
+        select * from employees where commission_pct is not null;
+
+---
+
+## 패턴 매칭
+
+- MYSQL 기본적으로 제공하는 것
+    - 표준 SQL pattern matching
+    - 정규표현식 pattern matching
+- SQL Pattern matching
+    - LIKE or NOT LIKE 비교 연산자를 사용해서 패턴 매칭을 한다.
+
+            select * from employees where first_name like "b%";
+            select * from employees where first_name like "_____"; 
+            select * from employees where first_name like "H____"; 
+
+---
+
+## IN
+
+         select * from employees where department_id = '90' or department_id = '100';
+         ->
+         select * from employees where department_id in (90, 100);
+
+---
+
+## 문자형 함수 - UCASE, UPPER
+
+        select ucase(last_name) from employees;
+        select ucase("heelo");
+
+
+## 문자형 함수 - LCASE, LOWER
+
+        select lcase(last_name) from employees;
+        select lcase("heelo");
+
+
+## 문자형 함수 - substring
+
+        select substring("haapy day",3,2);
+        select substring(first_name,1,1) from employees;
+        select * from employees where substring(first_name,1,1) = 'A';
+
+---
+
+## 실행 계획 보기(중요)
+
+        explain select concat(first_name, " ", last_name) as 이름, hire_date as 입사일 from employees where substring(hire_date,1,4) = '1989';
+        explain select concat(first_name, " ", last_name) as 이름, hire_date as 입사일 from employees where hire_date like '1989%';
+
+---
+
+## 실행 계획 보기(중요)
+
+- index생성 후 실행 계획 보기
+
+        create index employees_hire_date_idx on employees (hire_date);
+        explain select concat(first_name, " ", last_name) as 이름, hire_date as 입사일 from employees where substring(hire_date,1,4) = '1989';
+        explain select concat(first_name, " ", last_name) as 이름, hire_date as 입사일 from employees where hire_date like '1989%';
+
+---
