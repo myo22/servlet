@@ -656,6 +656,15 @@ https://github.com/urstoryp/hr-schema-mysql/blob/master/hr-schema-mysql.sql
         select substring(first_name,1,1) from employees;
         select * from employees where substring(first_name,1,1) = 'A';
 
+## 문자형 함수 - LPAD, RPAD
+        select LPAD('hi',5,'?'), LPAD('joe',7,'*');
+        select employee_id, LPAD(cast(salary as char), 10, '*') from employees;
+
+
+## 문자형 함수 - TRIM, LTRIM, RTRIM
+        select LTRIM('    hello   '), RTRIM('      hello ');
+        select TRIM('    hello   '), TRIM(both 'x' from 'xxxhixxxx');
+
 ---
 
 ## 실행 계획 보기(중요)
@@ -677,7 +686,49 @@ https://github.com/urstoryp/hr-schema-mysql/blob/master/hr-schema-mysql.sql
 
 ## 인덱스 목록 보기, 인덱스 삭제하기
 
-         show index from employees;
+        show index from employees;
         alter table employees drop index employees_hire_date_idx;
 
 ---
+
+## 숫자형 함수 - ABS(x) : x의 절대값을 구한다.
+
+        select abs(2), abs(-2);
+
+## 숫자형 함수 - MOD(n,m) % : n을 m으로 나눈 나머지 값을 출력한다.
+
+        select mod(234,10), 254 % 7, mod(29,9);
+
+## 숫자형 함수 - CEILING(x) : x보다 작지 않은 가장 작은 정수를 반환한다.
+
+        select CEILING(1.23), CEILING(-1.23);
+
+## 숫자형 함수 - round(x) : x에 가장 근접한 정수를 반환한다.
+
+        select round(-1.23), round(-1.58), round(1.58);
+
+## 숫자형 함수 - round(x,d) : x값 중에서 소수점 d자리에 가장 근접한 수로 반환한다.
+
+        select round(1.298, 1), round(1.298,0);
+
+## 숫자형 함수 - pow(x,y) power(x,y) : x의 y 제곱 승을 반환한다.
+        
+        pow(x,y) power(x,y)
+
+## 숫자형 함수 - sign(x) : x=음수이면 -1을, x=0이면 0을, x=양수이면 1을 출력한다.
+        
+        select sign(-32), sign(0), sign(234);
+
+## 숫자형 함수 - greatest(x,y,....): 가장 큰 값을 반환한다.
+        
+         select greatest(2,0), greatest(4.0,3.0,5.0), greatest('A', 'B', 'C');
+        
+## 숫자형 함수 - least(x,y,....): 가장 작은 값을 반환한다.
+
+        select least(2,0), least(34.0,3.0,5.0), least('b', 'A', 'C');
+        ! 대문자 A는 65 소문자 a는 97인건 알아두면 좋다.
+
+---
+
+
+        
