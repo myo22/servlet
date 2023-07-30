@@ -743,10 +743,68 @@ https://github.com/urstoryp/hr-schema-mysql/blob/master/hr-schema-mysql.sql
         select NOW(), SYSDATE(), CURRENT_TIMESTAMP;
 
 ## 날짜형 함수 - DATE_FORMAT(date, format): 입력된 date를 format 형식으로 반환한다.
+https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_date-format
 
         select DATE_FORMAT(CURDATE(), '%w %M %Y');
         select DATE_FORMAT(CURDATE(), '%Y %M %d');
-        
 
+## 날짜형 함수 - PERIOD_DIFF(p1,p2) : YYMM이나 YYYYMM으로 표기되는 p1과 p2의 차이 개월을 반환한다.
 
+        select concat(first_name, ' ', last_name) as name,
+	        period_diff(DATE_FORMAT(CURDATE(), '%Y%m'),
+		        DATE_FORMAT(hire_date, '%Y%m'))
+        from employees;
+
+---
+
+## 형변환
+
+- cast 함수는 type을 변경하는데 유용하다
+    - BINARY
+    - CHAR
+    - DATE
+    - DATETIME
+    - SIGNED {INTEGER}
+    - TIME
+    - UNSIGNED {INTEGER}
+
+            SELECT cast(NOW() AS DATE);
+            SELECT CAST(1-2 as unsigned);
+
+---
+
+## 그룹함수
+
+        select avg(salary) from employees;
+        select avg(salary), sum(salary) from employees;
+
+## ROW 카운팅(counting)
+
+        select count(*) from employees;
+
+---
+
+## SELECT 구문의 전체 문형
+
+    SELECT (DISTINCT) 칼럼명 (ALIAS)
+    FROM 테이블명
+    WHERE 조건식
+    GROUB BY 칼럼명
+    HAVING 조건식
+    ORDER BY 칼럼이나 표현식 (ASC 또는 DESC)
+
+- GROUB BY : 전체 데이터를 소그룹으로 나누어 칼럼을 명시
+- HAVING : GROUP에 대한 조건을 기술
+
+---
+
+## GROUP BY 절의 사용
+
+    select department_id as 부서별, avg(salary) from employees group by department_id;
+    select department_id as 부서별, avg(salary) from employees where department_id is not null group by department_id;
+    
+- where절은 묶기전에 거르는 역할이기 때문에 5000원 이상은 HAVING을 써야한다.
+                    
+        select department_id as 부서별, avg(salary) from employees where department_id is not null group by department_id HAVING avg(salary) > 5000;
         
+---
