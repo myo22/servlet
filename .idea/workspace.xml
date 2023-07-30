@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="SQL부터 Spring Data JPA까지">
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="SQL 숫자 관련 함수">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -176,7 +176,7 @@
       <workItem from="1690333845292" duration="3103000" />
       <workItem from="1690434720595" duration="5635000" />
       <workItem from="1690511504411" duration="5499000" />
-      <workItem from="1690701677334" duration="1561000" />
+      <workItem from="1690701677334" duration="2533000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -338,7 +338,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690518020443</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="SQL 숫자 관련 함수">
+      <option name="closed" value="true" />
+      <created>1690703342861</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1690703342861</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,6 +367,7 @@
     <MESSAGE value="Spring Data JAP" />
     <MESSAGE value="스프링 웹 애플리케이션" />
     <MESSAGE value="SQL부터 Spring Data JPA까지" />
-    <option name="LAST_COMMIT_MESSAGE" value="SQL부터 Spring Data JPA까지" />
+    <MESSAGE value="SQL 숫자 관련 함수" />
+    <option name="LAST_COMMIT_MESSAGE" value="SQL 숫자 관련 함수" />
   </component>
 </project>

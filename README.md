@@ -730,5 +730,23 @@ https://github.com/urstoryp/hr-schema-mysql/blob/master/hr-schema-mysql.sql
 
 ---
 
+## 날짜형 함수 - CURDATE(), CURRENT_DATE : 오늘 날짜를 YYYY-MM-DD 나 YYYYMMDD형식을 반환한다.
+
+        select CURDATE(), CURRENT_DATE;
+
+## 날짜형 함수 - CURTIME(), CURRENT_TIME : 현재 시각을 HH:MM:SS나 HHMMSS 형식으로 반환한다.
+
+        select CURTIME(), CURRENT_TIME;
+
+## 날짜형 함수 - NOW() SYSDATE() CURRENT_TIMESTAMP: 오늘 현시각을 YYYY-MM-DD HH:MM:SS나 YYYYMMDDHHMMSS 형식으로 반환한다.
+
+        select NOW(), SYSDATE(), CURRENT_TIMESTAMP;
+
+## 날짜형 함수 - DATE_FORMAT(date, format): 입력된 date를 format 형식으로 반환한다.
+
+        select DATE_FORMAT(CURDATE(), '%w %M %Y');
+        select DATE_FORMAT(CURDATE(), '%Y %M %d');
+        
+
 
         
