@@ -874,5 +874,11 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_da
 - ALIAS를 사용하면 칼럼헤딩에 관한 애매함을 피할 수 있다.
 - ALIAS를 사용하여 사원의 이름과 부성명을 출력하세요.
 
+### 추가적인 조건 기술
+
+- WHERE절에 JOIN조건 이외의 추가적인 조건을 가질 수 있다.
+- 조인을 만족하는 데이터중 특정행만 선택하여 결과를 얻고 싶을때 추가조건을 AND로 연결한다.
+- 사원의 이름과 부서명을 출력하시오. 단 location_id가 1800인 경우만 출력하시오.
+
 ---
      
