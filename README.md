@@ -808,3 +808,71 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_da
         select department_id as 부서별, avg(salary) from employees where department_id is not null group by department_id HAVING avg(salary) > 5000;
         
 ---
+
+![img_12.png](img_12.png)
+
+# JOIN
+- 하나 이상의 테이블로부터 연관된 데이터를 검색해 오는 방법
+
+#### 부서의 이름과 사원이 이름을 출력하시오.
+
+        테이블이 N개 이상일 때는 N-1개의 join조건이 필요하다.
+        select department_name, concat(first_name, ' ', last_name) as name from employees, departments where departments.manager_id = employees.employee_id;
+
+![img_13.png](img_13.png)
+
+### Cartesian Join
+
+- Join에 대한 조건이 생략되거나 잘못 기술되어 한 테이블에 있는 모든 행들이 다른 테이블에 있는 모든 행들과 Join이 되어서 얻어진 경우를 Cartesian Product한다.
+
+        select * from employees, departments;
+- Cartesian Product를 얻지 않기 위해서 반드시 WHERE 절을 써준다.
+- (JOIN하는 테이블의 수 -1)개의 JOIN 조건이 필요하다.
+
+
+#### 사원이 이름과 그 사원이 속한 부서의 이름을 출력하시오.
+
+        select concat(employees.first_name, ' ', employees.last_name) as name, departments.department_name from employees, departments where employees.department_id = departments.department_id;
+        select concat(e.first_name, ' ', e.last_name) as name, d.department_name from employees e, departments d where e.department_id = d.department_id;
+
+![img_14.png](img_14.png)
+
+#### 부서의 이름과 그 부서가 속한 도시의 이름을 출력하십시오.
+
+        select d.department_name, l.city from departments d, locations l where d.location_id = l.location_id;
+
+#### 사원이 이름과 그 사원이 속한 부서가 속한 도시의 이름을 출력하시오.
+
+        select l.city, e.first_name from departments d, locations l, employees e where d.location_id = l.location_id and d.department_id = e.department_id;
+
+
+## Simple Join
+
+        select t1.col1, t1.col2, t2.col1 ... FROM Table1 t1, Table2 t2 WHERE t1.col3 = t2.col3
+
+- FROM 절에 필요로 하는 테이블을 모두 적는다.
+    - 컬럼이름의 모호성을 피하기 위해 (어느테이블에 속하는지 알 수 없음이 있을 수 있으므로 Table 이름에 Alias 사용(테이블 이름으로 직접 지칭 가능))
+    - 적절한 Join 조건을 Where 절에 부여 (일반적으로 테이블 개수 -1 개의 조인 조건이 필요)
+    - 일반적으로 PK와 FK간의 = 조건이 붙는 경우가 많음
+
+### Join 종류
+- Cross Join, Inner Join, Outer Join, Theta Join, Equi-Join, Natural Join, Self Join
+
+## EQUIJoin
+
+- 컬럼에 있는 값이 정확하게 일치하는 경우에 = 연산자를 이용해서 JOIN
+    - 컬럼에 있는 값들이 정확히 일치하는 경우에 = 연산자를 사용해서 조인
+    - 일반적으로 PK-FK 관계에 의하여 JOIN이 성립
+    - WHERE 절 혹은 ON절을 이용
+    - 액세스 효율을 향상시키고 좀 더 명확히 하기 위해서 칼럼 이름앞에 테이블 이름을 밝힌다.
+    - 같은 이름의 칼럼이 조인대상 테이블에 존재하면 반드시 컬럼 이름앞에 테이블 이름을 밝혀주어야 한다.
+    - JOIN을 위한 테이블이 N개라고 하면 JOIN을 위한 최소한의 = 조건은 N-1이다.
+
+## 테이블 Alias 사용
+
+- 테이블명.칼럼명으로 기술할 때, 테이블명이 길어지는 경우는 많은 시간이 소요되므로 ALIAS를 지정하고 ALIAS가 지정되면 지정된 ALIAS만 사용해야 한다.
+- ALIAS를 사용하면 칼럼헤딩에 관한 애매함을 피할 수 있다.
+- ALIAS를 사용하여 사원의 이름과 부성명을 출력하세요.
+
+---
+     
