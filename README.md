@@ -880,7 +880,27 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_da
 - 조인을 만족하는 데이터중 특정행만 선택하여 결과를 얻고 싶을때 추가조건을 AND로 연결한다.
 - 사원의 이름과 부서명을 출력하시오. 단 location_id가 1800인 경우만 출력하시오.
 
-      select concat(e.first_name, ' ', e.last_name), d.department_name from employees e, departments d, locations l where e.department_id = d.department_id and d.location_id = l.location_id and l.location_id = '1800';
+      select concat(e.first_name, ' ', e.last_name), d.department_name from employees e, departments d where e.department_id = d.department_id  and d.location_id = '1800';
+
+
+#### Sample Data
+
+scott데이터를 저장한다.
+https://gist.github.com/urstoryp
+
+
+## 조건(theta) Join
+
+- 임의의 조건을 Join 조건으로 사용가능
+- Non-Equi Join이라고도 함
+
+#### 사원이 이름과 사원의 급여 등급을 출력하시오.
+
+        select ename, sal from emp;
+        select grade from salgrade;
+        select e.ename, s.grade	from emp e, salgrade s where e.sal >= s.losal and e.sal <= s.hisal;
+        
+## 
 
 ---
      
