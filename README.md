@@ -809,6 +809,11 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_da
         
 ---
 
+#### Sample Data
+
+scott데이터를 저장한다.
+https://gist.github.com/urstoryp
+
 ![img_12.png](img_12.png)
 
 # JOIN
@@ -855,7 +860,8 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_da
     - 적절한 Join 조건을 Where 절에 부여 (일반적으로 테이블 개수 -1 개의 조인 조건이 필요)
     - 일반적으로 PK와 FK간의 = 조건이 붙는 경우가 많음
 
-### Join 종류
+
+# Join 종류
 - Cross Join, Inner Join, Outer Join, Theta Join, Equi-Join, Natural Join, Self Join
 
 ## EQUIJoin
@@ -868,7 +874,7 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_da
     - 같은 이름의 칼럼이 조인대상 테이블에 존재하면 반드시 컬럼 이름앞에 테이블 이름을 밝혀주어야 한다.
     - JOIN을 위한 테이블이 N개라고 하면 JOIN을 위한 최소한의 = 조건은 N-1이다.
 
-## 테이블 Alias 사용
+### 테이블 Alias 사용
 
 - 테이블명.칼럼명으로 기술할 때, 테이블명이 길어지는 경우는 많은 시간이 소요되므로 ALIAS를 지정하고 ALIAS가 지정되면 지정된 ALIAS만 사용해야 한다.
 - ALIAS를 사용하면 칼럼헤딩에 관한 애매함을 피할 수 있다.
@@ -882,13 +888,6 @@ https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_da
 
       select concat(e.first_name, ' ', e.last_name), d.department_name from employees e, departments d where e.department_id = d.department_id  and d.location_id = '1800';
 
-
-#### Sample Data
-
-scott데이터를 저장한다.
-https://gist.github.com/urstoryp
-
-
 ## 조건(theta) Join
 
 - 임의의 조건을 Join 조건으로 사용가능
@@ -898,9 +897,75 @@ https://gist.github.com/urstoryp
 
         select ename, sal from emp;
         select grade from salgrade;
-        select e.ename, s.grade	from emp e, salgrade s where e.sal >= s.losal and e.sal <= s.hisal;
-        
-## 
+        select e.ename, s.grade	from emp e, salgrade s where e.sal >= s.losal and e.sal <= s.hisal order by e.sal;
+        select e.ename, s.grade	from emp e, salgrade s where e.sal between s.losal and s.hisal order by e.sal;
+
+## Natural Join
+
+- 두 테이블에 공통 칼럼이 있는 경우 별다른 조인 조건없이 공통 칼럼처럼 묵시적을 조인이 되는 유형
+- ANSI/ISO SQL1999를 따르는 ANSI JOIN문법.
+
+        select * from departments; #27
+        select * from locations; #23
+        select * from departments natural join locations; #27
+        위에 문장을 Equi 조인으로 바꾸면 아래와 같다고 볼 수 있다.
+        select * from departments, locations where departments.location_id = locations.location_id;
+
+        단 2개의 칼럼이상으로 조인되면 이상하게 조인되는 경우가 있으므로 주의한다.
+        select * from employees, departments where departments.department_id = employees.department_id; # 106
+        select * from employees natural join departments; # 32
+
+## INNER JOIN - JOIN~ USING
+
+- Natural join의 문제점: 조인하고자 하는 두 테이블에 같은 이름이 칼럼이 많을 때 특정한 칼럼으로 조인하고 싶다면 USING절을 사용해서 기술한다.
+- ANSI/ISO SQL1999를 따르는 ANSI JOIN문법.
+
+         select * from employees join departments using(department_id); # 106
+
+## INNER JOIN - JOIN~ ON
+
+- 공통된 이름의 칼럼이 없는 경우 가장 보편적으로 사용할 수 있는 유형
+- WHERE 절에 일반조건만 쓸 수 있게하고 조인 조건은 ON에 두어 보다 의미를 명확하게 알아 보기도 쉽다.
+- ANSI/ISO SQL1999를 따르는 ANSI JOIN문법.
+- ON 부분을 where절에서 작성가능하다.
+
+        select * from employees join departments on(departments.department_id = employees.department_id); # 106
+        아래와같이 ON 부분을 where절에서 작성가능하다.
+        select * from employees join departments where departments.department_id = employees.department_id; # 106
+
+## Outer Join
+
+정의
+- Join 조건을 만족하지 않는 (짝이 없는) 튜플의 경우 Null을 포함하여 결과를 생성
+- 모든 행이 결과 테이블에 참여
+
+종류
+- Left Outer Join: 왼쪽의 모든 튜플은 결과 테이블에 나타남
+- Right Outer Join: 오른쪽의 모든 튜플은 결과 테이블에 나타남
+- Full Outer Join: 양쪽 모두 결과 테이블에 참여
+
+표현 방법
+- Null이 올 수 있는 쪽 조건에 (+)를 붙인다.(Oracle일 경우)
+
+#### 사원의 이름과 부서의 이름을 출력하시오.(단 부서가 없을 경우도 사원의 이름을 출력하시오)
+
+        select * from employees left outer join departments on(departments.department_id = employees.department_id); # 107
+
+## SELF JOIN (반드시 Alias 사용해야 한다.)
+
+#### 사원이 이름과 사원의 상사 이름을 출력하시오.
+
+        # employees는 사원의 테이블이면서 상사의 테이블의 정보를 갖는 테이블이다.
+        select employee_id as '상사 id', first_name as '상사 이름' from employees where employee_id = 100;
+
+        select concat(e1.first_name, ' ', e1.last_name) as '사원 이름', concat(e2.first_name, ' ', e2.last_name) as '상사 이름' from employees e1, employees e2 where e1.manager_id = e2.employee_id; # 106
+        위의 Simple 조인을 ANSI JOIN으로 바꾸면 아래와 같이 바꿀 수 있다.
+        select concat(e1.first_name, ' ', e1.last_name) as '사원 이름', concat(e2.first_name, ' ', e2.last_name) as '상사 이름' from employees e1 join employees e2 on(e1.manager_id = e2.employee_id); # 106
+ 
+#### 상사가 없는 사람도 출력하려면?
+
+        select * from employees where manager_id is null;
+        select concat(e1.first_name, ' ', e1.last_name) as '사원 이름', concat(e2.first_name, ' ', e2.last_name) as '상사 이름' from employees e1 left outer join employees e2 on(e1.manager_id = e2.employee_id); # 107
 
 ---
      
