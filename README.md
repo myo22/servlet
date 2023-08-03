@@ -819,8 +819,7 @@ https://gist.github.com/urstoryp
 # JOIN
 - 하나 이상의 테이블로부터 연관된 데이터를 검색해 오는 방법
 
-#### 부서의 이름과 사원이 이름을 출력하시오.
-
+        문제) 부서의 이름과 사원이 이름을 출력하시오.
         테이블이 N개 이상일 때는 N-1개의 join조건이 필요하다.
         select department_name, concat(first_name, ' ', last_name) as name from employees, departments where departments.manager_id = employees.employee_id;
 
@@ -835,19 +834,16 @@ https://gist.github.com/urstoryp
 - (JOIN하는 테이블의 수 -1)개의 JOIN 조건이 필요하다.
 
 
-#### 사원이 이름과 그 사원이 속한 부서의 이름을 출력하시오.
-
+        문제) 사원이 이름과 그 사원이 속한 부서의 이름을 출력하시오.
         select concat(employees.first_name, ' ', employees.last_name) as name, departments.department_name from employees, departments where employees.department_id = departments.department_id;
         select concat(e.first_name, ' ', e.last_name) as name, d.department_name from employees e, departments d where e.department_id = d.department_id;
 
 ![img_14.png](img_14.png)
 
-#### 부서의 이름과 그 부서가 속한 도시의 이름을 출력하십시오.
-
+        문제) 부서의 이름과 그 부서가 속한 도시의 이름을 출력하십시오.
         select d.department_name, l.city from departments d, locations l where d.location_id = l.location_id;
 
-#### 사원이 이름과 그 사원이 속한 부서가 속한 도시의 이름을 출력하시오.
-
+        문제) 사원이 이름과 그 사원이 속한 부서가 속한 도시의 이름을 출력하시오.
         select l.city, e.first_name from departments d, locations l, employees e where d.location_id = l.location_id and d.department_id = e.department_id;
 
 
@@ -893,7 +889,7 @@ https://gist.github.com/urstoryp
 - 임의의 조건을 Join 조건으로 사용가능
 - Non-Equi Join이라고도 함
 
-#### 사원이 이름과 사원의 급여 등급을 출력하시오.
+        문제) 사원이 이름과 사원의 급여 등급을 출력하시오.
 
         select ename, sal from emp;
         select grade from salgrade;
@@ -947,14 +943,12 @@ https://gist.github.com/urstoryp
 표현 방법
 - Null이 올 수 있는 쪽 조건에 (+)를 붙인다.(Oracle일 경우)
 
-#### 사원의 이름과 부서의 이름을 출력하시오.(단 부서가 없을 경우도 사원의 이름을 출력하시오)
-
+        문제) 사원의 이름과 부서의 이름을 출력하시오.(단 부서가 없을 경우도 사원의 이름을 출력하시오)
         select * from employees left outer join departments on(departments.department_id = employees.department_id); # 107
 
 ## SELF JOIN (반드시 Alias 사용해야 한다.)
 
-#### 사원이 이름과 사원의 상사 이름을 출력하시오.
-
+        문제) 사원이 이름과 사원의 상사 이름을 출력하시오.
         # employees는 사원의 테이블이면서 상사의 테이블의 정보를 갖는 테이블이다.
         select employee_id as '상사 id', first_name as '상사 이름' from employees where employee_id = 100;
 
@@ -962,10 +956,48 @@ https://gist.github.com/urstoryp
         위의 Simple 조인을 ANSI JOIN으로 바꾸면 아래와 같이 바꿀 수 있다.
         select concat(e1.first_name, ' ', e1.last_name) as '사원 이름', concat(e2.first_name, ' ', e2.last_name) as '상사 이름' from employees e1 join employees e2 on(e1.manager_id = e2.employee_id); # 106
  
-#### 상사가 없는 사람도 출력하려면?
-
+        문제) 상사가 없는 사람도 출력하려면?
         select * from employees where manager_id is null;
         select concat(e1.first_name, ' ', e1.last_name) as '사원 이름', concat(e2.first_name, ' ', e2.last_name) as '상사 이름' from employees e1 left outer join employees e2 on(e1.manager_id = e2.employee_id); # 107
 
 ---
      
+# SubQuery란?
+- 하나의 SQL 질의문 속에 다른 SQL 질의문이 포함되어 있는 형태
+
+        문제) SCOTT의 급여보다 높은 급여를 받는 사람의 이름을 출력하시오.
+        # SCOTT의 급여를 일단 알아야 한다.
+        select sal from emp where ename = 'SCOTT';
+
+        # 3000원보다 높은 급여를 받는 사람
+        select ename from emp where sal > 3000;
+
+        select ename from emp where sal > (select sal from emp where ename = 'SCOTT');
+        ! 단 동명이인이 있다면 오류가 발생한다.
+
+## Single-Row SubQuery
+- Subquery의 결과가 한 ROW인 경우
+- Single-Row Operator 사용해야 함: =, >, >=, <, <=, <>
+
+        문제) emp테이블에서 이름으로 정렬했을 때 첫번째 나오는 이름의 이름, 급여, 부서번호를 출력하시오.
+        select * from emp order by ename;
+        select ename, sal, deptno from emp where ename = (select min(ename) from emp);
+
+        문제) 사원의 평균 급여보다 작은 급여를 받는 사람의 이름과 급여를 출력하시오.
+
+        select avg(sal) from emp;
+        select ename, sal from emp where sal < (select avg(sal) from emp);
+
+        문제) 부서이름이 SALES인 부서의 사원 이름과 부서 번호를 출력하시오.
+
+        select * from dept;
+        select deptno from dept where dname = 'SALES';
+        select * from emp where deptno = 30;
+        select ename, deptno from emp where deptno = (select deptno from dept where dname = 'SALES');
+
+        # Equie join으로 내가 바꿔보았다.
+        select e.ename, d.deptno from emp e, dept d where d.deptno = e.deptno and d.dname = 'SALES';
+        ! 양에 따라서 조건에따라 Join과 SubQuery중 더 빠른게 있으니 다양하게 알면 좋다.
+
+        # 이것도 바꿔본것.
+        select ename, deptno from emp natural join dept where dname = 'SALES';
