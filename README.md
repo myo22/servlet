@@ -1038,7 +1038,7 @@ https://gist.github.com/urstoryp
         select sal from emp where deptno in(30,10);
         select * from emp where sal < all(select sal from emp where deptno in(30,10));
 
-## Correlated Query
+## Correlated Query(어려운 개념)
 - Outer Query와 Inner Query가 서로 연관되어 있음
 - 해석방법
     - Outer query의 한 Row를 얻는다.
@@ -1046,4 +1046,48 @@ https://gist.github.com/urstoryp
     - 계산결과를 이용 Outer query의 WHERE절을 evaluate
     - 결과가 참이면 해당 Row를 결과에 포함시킨다.
 
+            ! 어려움
+            문제) 사원의 이름, 급여, 부서 번호를 출력하시오. 단 사원의 급여가 그 사원이 속한 부서의 평균 급여보다 큰 경우만 출력하시오.
+            select o.ename, o.sal, o.deptno from emp o;
+            select avg(i.sal) from emp i where i.deptno = 20; #2175
+            select o.ename, o.sal, o.deptno from emp o where o.sal > (select avg(i.sal) from emp i where i.deptno = o.deptno);
+
+#### 중간점검
+
+        문제) 각 부서별로 최고 급여를 받는 사원을 출력하시오.
+
+        # 각 부서별 최고 급여 구하기
+        select max(sal) from emp group by deptno;
+        select * from emp where (sal, deptno) in (select max(sal), deptno from emp group by deptno);
+        select * from emp where sal in (select max(sal) from emp group by deptno);
+
+        select max(sal), deptno from emp group by deptno;
+
+        # 테이블은 일종의 집합이다.
+        # select 결과도 집합이다. -> 테이블처럼 사용해보기
+        select * from(select max(sal), deptno from emp group by deptno) m;
+        select e.ename, e.deptno from emp e, (select max(sal) as msal, deptno from emp group by deptno) m where e.deptno = m.deptno and e.sal = m.msal;
+        이처럼 다양한 방법이 존재하고 조건과 성능에따라 사용할 줄 알아야 한다.
+
+## Set Operator
+- 두 질의의 결과를 가지고 집합 연산
+- UNION, UNION ALL, INTERSECT, MINUS
+
+        # A: 1,2,3
+        # B: 2,3,4
+        select * from A union select * from B;
+        
+        # UNION ALL
+        select * from A union all select * from B;
+
+        # INTERSECT
+        select A.name from A,B where A.name = B.name;
+
+        # MINUS
+        select A.name from A where A.name not in (select B.name from B);
+
+## Rank()함수 - MySQL8 이상에서 사용가능
+        select sal, ename, rank() over(order by sal desc) as ranking from emp;
+
+---
         

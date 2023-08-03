@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Single-Row Subquery">
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Single-Row Subquery, Multi-Row Query">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -179,7 +179,7 @@
       <workItem from="1690701677334" duration="4739000" />
       <workItem from="1690766995240" duration="5208000" />
       <workItem from="1690860483120" duration="6073000" />
-      <workItem from="1691031533022" duration="4572000" />
+      <workItem from="1691031533022" duration="7847000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -413,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691043984955</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Single-Row Subquery, Multi-Row Query">
+      <option name="closed" value="true" />
+      <created>1691045528581</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1691045528581</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,6 +449,7 @@
     <MESSAGE value="조건 Join" />
     <MESSAGE value="Inner Join, Outer Join, Theta Join, Equi-Join, Natural Join, Self Join" />
     <MESSAGE value="Single-Row Subquery" />
-    <option name="LAST_COMMIT_MESSAGE" value="Single-Row Subquery" />
+    <MESSAGE value="Single-Row Subquery, Multi-Row Query" />
+    <option name="LAST_COMMIT_MESSAGE" value="Single-Row Subquery, Multi-Row Query" />
   </component>
 </project>
