@@ -1001,3 +1001,49 @@ https://gist.github.com/urstoryp
 
         # 이것도 바꿔본것.
         select ename, deptno from emp natural join dept where dname = 'SALES';
+
+## Multi-Row Query
+- Subquery의 결과가 둘 이상의 Row
+- Multi-Row에 대한 연산을 사용해야 함: ANY, ALL, IN, EXIST...
+
+        ! 아래 문장이 오류가 발생한다 이유가 뭘까?
+        select ename, sal, deptno from emp where ename = (select min(ename) from emp group by deptno);
+
+        select min(ename) from emp;
+        # 부서별로 가장 먼저 나오는 이름들을 구한다.
+        select min(ename) from emp group by deptno; # 3건의 데이터가 나온다.
+
+        문제) 부서별 이름 순서가 첫번째 사원 이름, 급여, 부서 번호를 출력하시오.
+        select min(ename) from emp group by deptno;
+        select ename, sal, deptno from emp where ename in ('ADAMS', 'ALLEN', 'CLARK'); # 이건 틀린 결과이다. = 동명이인이 있을경우 여러명이 나오기 때문이다.   
+        select ename, sal, deptno from emp where (ename, deptno) in (select min(ename), deptno from emp group by deptno);
+
+### Any
+- 다수의 비교값 중 한개라도 만족하면 true이다.
+- IN과 다른점은 비교 연산자를 사용한다는 점이다.
+
+        select ename, sal, deptno from emp where ename = ANY (select min(ename) from emp group by deptno);
+
+- 쿼리의 결과는 950보다 큰 값을 모두 출력하는 즉, sal > 950과 같은 결과이다.
+        
+        # 그러나 Any는 Subquery와 함께 사용할때 의미가 있다.
+        select * from emp where sal > any(950, 3000, 1250);
+        select * from emp where sal > any(select sal from emp where sal > 950);
+
+### All
+- 전체 값을 비교하여 모두 만족해야만 true이다.
+- 아래의 쿼리는 결과가 없다. 모두를 만족할 수는 없으니깐.
+- Oracle은 오류가 발생하지 않지만, MySQL은 Subquery에서만 사용가능하다.
+
+        select sal from emp where deptno in(30,10);
+        select * from emp where sal < all(select sal from emp where deptno in(30,10));
+
+## Correlated Query
+- Outer Query와 Inner Query가 서로 연관되어 있음
+- 해석방법
+    - Outer query의 한 Row를 얻는다.
+    - 해당 Row를 가지고 Inner Query를 계산한다.
+    - 계산결과를 이용 Outer query의 WHERE절을 evaluate
+    - 결과가 참이면 해당 Row를 결과에 포함시킨다.
+
+        
