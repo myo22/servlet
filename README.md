@@ -1090,4 +1090,66 @@ https://gist.github.com/urstoryp
         select sal, ename, rank() over(order by sal desc) as ranking from emp;
 
 ---
-        
+
+![img_15.png](img_15.png)
+
+# DDL(Data Definition Language)
+
+- CREATE TABLE: 테이블 생성
+- ALTER TABLE: 테이블 관련 변경
+- DROP TABLE: 테이블 삭제
+- RENAME: 이름 변경
+- TRUNCATE: 테이블의 모든 데이터 삭제
+- COMMENT: 테이블에 설명 추가
+
+#### MySQL Data Types
+https://dev.mysql.com/doc/refman/8.0/en/data-types.html
+
+11.1 Numeric Data Types
+11.2 Date and Time Data Types
+11.3 String Data Types
+...~~~
+
+## Create Table
+
+https://dev.mysql.com/doc/refman/8.0/en/create-table.html
+
+        create table 테이블이름
+        {
+            필드이름1 필드타입1,
+            필드이름2 필드타입2,
+            .....       
+            제약조건 1,
+            제약조건 2,
+            .....
+        {
+
+### 제약조건(constraint)
+
+제약 조건(constraint)이란 데이터의 무결성을 지키기 위해 데이터를 입력받을 때 실행되는 검사 규칙을 의미한다.
+
+이러한 제약조건은 CREATE문으로 테이블을 생성할 때나, ALTER 문으로 필드를 추가할 때도 설정할 수도 있다.
+
+- NOT NULL: NULL을 허용하지 않는다.
+- UNIQUE: 해당 필드는 서로 다른 값을 가져야만 한다.
+- PRIMARY KEY: 해당 필드는 NOT NULL과 UNIQUE 제약 조건의 특징을 모두 가진다.
+- FOREIGN KEY: 특정 테이블의 칼럼이 특정 테이블의 칼럼을 참조하게 한다.
+- DEFAULT: 해당 필드의 기본값을 설정합니다.
+
+또한, AUTO_INCREMENT 키워드를 사용하면 해당 필드의 값을 1부터 시작하여 새로운 레코드가 추가될 때마다 1씩 증가된 값을 자동으로 저장한다.
+
+이때 AUTO_INCREMENT 키워드 다음에 대입 연산자(=)를 사용하여 시작값을 변경할 수 있다.
+
+Oracle은 sequence객체를 이용해 자동으로 필드의 값을 증가시킬 수 있다.
+
+---
+
+# Database 설계
+
+1. 요구조건 분석 단계 - 데이터 및 처리 요구 조건
+2. 개념적 설계 단계(E-R 다이어그램) - DBMS 독립적 개념 스키마 설계, 트랜잭션 모델링
+3. 논리적 설계 단계(정규화) - 목표 DBMS에 맞는 스키마 설계, 트랜잭션 인터페이스 설계
+4. 물리적 설계 단계(반정규화) - 목표 DBMS에 맞는 물리적 구조 설계, 트랜잭션 세부 설계
+5. 구현단계 - 목표 DBMS DDL로 스키마 작성, 트랜잭션(응용프로그램)작성
+
+       문제) 회원가입, 로그인, 글쓰기, 글 목록보기 할 때 어떤 쿼리를 사용할까?
