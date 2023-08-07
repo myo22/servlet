@@ -1237,4 +1237,42 @@ Oracle은 sequence객체를 이용해 자동으로 필드의 값을 증가시킬
 3. 입력한 값을 처리 
 4. 트랜잭션을 끝
 
---- 
+## AutoCommit 확인, 켜기, 끄기
+
+- select @@autocommit; - 현재 AutoCommit 값 확인
+- set autocommit = 1; - 켜기
+- set autocommit = 0; - 끄기
+
+## Auto_increment
+
+        # auto_increment 1,2,4,5,100 이렇게 나올 수도 있다.
+        # 사용하는 이유? - unique한 값, 전에 하나 증가한 것 보다는 무조건 큰 값이 나온다.
+        begin;
+        insert into user(email, name, password) values("gksalsgud12@naver.com", "한민형", "1111");
+        select * from user;
+        rollback;
+        commit;
+
+        문제) 홍길동 사용자의 이름과 홍길동 사용자의 권한명을 출력하시오.
+        select * from role;
+        select u.name, r.name from user u, role r, user_role ur where u.user_id = ur.user_id and r.role_id = ur.role_id;
+
+## last_insert_id()
+
+        문제) 김갑순을 회원으로 등록하고 ROLE_USER권한을 부여하시오.
+        begin;
+        insert into user(email, name, password) values("rlarkqtns@naver.com", "김갑순", "1111");
+
+        # 이 상황에서 김갑순의 user_id는 뭘까요?
+        insert into user_role values(last_insert_id(), 1);
+
+        # 로그인 정보
+        select u.email, u.name, u.password, r.name from user u, role r, user_role ur where u.user_id = ur.user_id and r.role_id = ur.role_id and email = "dlalsgud12@naver.com";
+
+        # 1 page 게시물 목록 읽어오기
+        select board_id, title, content, user_id, regdate, view_cnt from board order by board_id desc limit 0, 10;
+
+        # 글 조회하기
+        select board_id, title, content, user_id, regdate, view_cnt from board where board_id = 1;
+
+        update board set view_cnt = view_cnt + 1 where board_id = 1;

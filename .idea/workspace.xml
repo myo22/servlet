@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="SQL DDL">
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="트랜잭션">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -181,7 +181,7 @@
       <workItem from="1690860483120" duration="6073000" />
       <workItem from="1691031533022" duration="7888000" />
       <workItem from="1691125558727" duration="4139000" />
-      <workItem from="1691377241655" duration="3131000" />
+      <workItem from="1691377241655" duration="5379000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -447,7 +447,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691130106079</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="트랜잭션">
+      <option name="closed" value="true" />
+      <created>1691386445287</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1691386445287</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,6 +486,7 @@
     <MESSAGE value="Single-Row Subquery, Multi-Row Query" />
     <MESSAGE value="Single-Row Subquery, Multi-Row Query, Any, ALl, Correlated Query, Set Operator, Rank() 함수" />
     <MESSAGE value="SQL DDL" />
-    <option name="LAST_COMMIT_MESSAGE" value="SQL DDL" />
+    <MESSAGE value="트랜잭션" />
+    <option name="LAST_COMMIT_MESSAGE" value="트랜잭션" />
   </component>
 </project>
