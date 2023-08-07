@@ -1276,3 +1276,5 @@ Oracle은 sequence객체를 이용해 자동으로 필드의 값을 증가시킬
         select board_id, title, content, user_id, regdate, view_cnt from board where board_id = 1;
 
         update board set view_cnt = view_cnt + 1 where board_id = 1;
+
+---
