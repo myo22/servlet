@@ -1197,3 +1197,44 @@ Oracle은 sequence객체를 이용해 자동으로 필드의 값을 증가시킬
 
 ---
 
+# 트랜잭션 구성
+- DML(INSERT, UPDATE, DELETE)의 집합
+- DDL이나 DCL은 한 문장이 트랜잭션으로 처리됨.
+
+- autocommit? - 입력, 수정, 삭제를 했을 때 데이터베이스에 바로 반영 -> autocommit을 켜야한다. 
+- DBMS session - DBMS와 연결된 상태. 
+- autocommit을 off를 하면 사용자가 수동으로 commit을 한다. 사용자가 수동으로 트랜잭션을 제어한다.
+- commit버튼, rollback 버튼이 활성화 된다. - 직접 사용자가 입력할 수 있다.
+- 트랜잭션 - 논리적인 하나의 작업 단위
+
+  - mysql에서 트랜잭션을 시작
+  
+          begin;
+          insert into role(role_id, name) values(2, 'ROLE_ADMIN');
+          SELECT * from role;
+          commit; # begin으로 시작하고 insert, update, delete등의 작업을 한 것을 DBMS에 반영.
+          
+          begin;
+          insert into role(role_id, name) values(3, 'HELLO');
+          SELECT * from role;
+          rollback; # commit과 달리 트랜잭션 안에 작업들을 취소하고 끝나는 것이다.
+
+          SELECT * from role;
+  
+          begin;
+          SELECT * from role;
+          update role set name = "ROLE_ADM" where role_id = 2; # roll_id에 해당하는 행은 lock에 걸린다.
+  
+          # rollback - name : ROLE_ADMIN, commit - name : ROLE_ADM 결정
+
+
+- 문제)트랜잭션은 언제 끝납니까?
+- commit or rollback을 해야 끝난다고 답해야 한다.
+
+오류가 발생하지 않기 위해서 입력할 값은 미리 물어본다.
+1. 입력할 값을 물어본다. 
+2. 트랜잭션 시작 
+3. 입력한 값을 처리 
+4. 트랜잭션을 끝
+
+--- 
