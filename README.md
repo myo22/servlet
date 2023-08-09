@@ -1278,3 +1278,54 @@ Oracle은 sequence객체를 이용해 자동으로 필드의 값을 증가시킬
         update board set view_cnt = view_cnt + 1 where board_id = 1;
 
 ---
+
+# JDBC 정의 
+
+- 자바를 이용한 데이터베이스 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약
+- 자바프로그램내에서 SQL문을 실행하기 위한 자바 API
+- SQL과 프로그래밍 언어의 통합 접근 중 한 형태
+- JAVA는 표준 인터페이스인 JDBC API를 제공
+- 데이터베이스 벤더, 또는 기타 써드파티에서는 JDBC 인터페이스를 구현한 드라이버(driver)를 제공한다.
+
+![img_19.png](img_19.png)
+
+ex) mysql DBMS에 접속하기 위해서는 JDBC 인터페이스를 구현하고 있는 드라이버가 필요한 것이다.
+
+## 환경 구성
+- JDK 설치
+- JDBC 드라이버 설치
+    - Maven의 경우 다음과 같은 의존성을 추가한다. MySQL 8기준
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.33</version>
+            </dependency>
+
+- java에 들어가보면 jdbc api - java sql - connection(DBMS 접속)를 구현하는 클래스는 없다고 나와있다. 
+  - 그 이유는 connection(DBMS 접속) 인터페이스는 자바에서 제공하는 것이 아니라 jdbc 드라이버에서 제공해주는 클래스가 구현하고 있기 때문이다.
+- java JDBC에서 가장 중요한 인터페이스는 Connection, PreparedStatement(SQL을 준비할때 사용하는 인터페이스), ResultSet(Select할때 데이터를 가져오는 인터페이스)
+- 중요한 클래스는 DriverManager(기본적으로 JDBC Driver를 관리해주는 클래스)
+
+## JDBC 프로그래밍 방법
+- import.java.sql.*;
+- 드라이버를 로드한다.
+- Connection 객체를 생성한다.
+- PreparedStatement 객체를 생성
+- PreparedStatement에 값을 바인딩 한다.
+- SELECT문일 경우 ResultSet을 이용하여 데이터를 읽어온다.
+- Connection, PreparedStatement, ResultSet을 모두 close()한다.
+    - Statement, PreparedStatement, CallableStatement를 이용해 SQL을 실행할 수 있다.
+    - procedure는 CallableStatement를 이용해 실행한다. 그 외에는 PreparedStatement로 실행하는 것이 좋다.
+
+![img_20.png](img_20.png)"
+
+    DBMS에 전송이 되고, DBMS안에서 실행되고... 그 실행된 결과가 네트워크를 타고 와서 출력.
+    select * from role;
+    이런 구조가 자바 프로그래밍할때 똑같이 적용되는 것이다.
+
+- 이런 동일한 패턴으로 select, delete, insert등을 하는 것인데
+  - 여기서 연결하거나 자원을 해제하는 반복적인 코드가 불편하다보니 등장한것이 -> spring jdbc가 등장한 것이다.
+  - mybatis 이런 프레임 워크는 반복되는 코드들은 프레임이 제공해주고 우리는 변화하는 부분인 sql, 바인딩을 입력해주면 된다.
+
+---
