@@ -1329,3 +1329,17 @@ ex) mysql DBMS에 접속하기 위해서는 JDBC 인터페이스를 구현하고
   - mybatis 이런 프레임 워크는 반복되는 코드들은 프레임이 제공해주고 우리는 변화하는 부분인 sql, 바인딩을 입력해주면 된다.
 
 ---
+
+# 트랜잭션 시작
+- auto commit을 끈다.
+        
+        conn.setAutoCommit(false);
+
+- SQL이 실행되 트랜잭션은 자동시작된다.
+- 트랜잭션 종료 -> commit or rollback
+        
+        conn.commit();
+        or
+        conn.rollback();
+
+---
