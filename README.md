@@ -1330,7 +1330,7 @@ ex) mysql DBMS에 접속하기 위해서는 JDBC 인터페이스를 구현하고
 
 ---
 
-# 트랜잭션 시작
+# JDBC에서 트랜잭션 시작과 Record Lock이 걸리는 상황
 - auto commit을 끈다.
         
         conn.setAutoCommit(false);
