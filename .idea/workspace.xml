@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Spring Data JPA">
-      <change afterPath="$PROJECT_DIR$/img_22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_23.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -188,7 +188,7 @@
       <workItem from="1691647889317" duration="2213000" />
       <workItem from="1691728570246" duration="125000" />
       <workItem from="1691983889692" duration="5222000" />
-      <workItem from="1692157956778" duration="864000" />
+      <workItem from="1692157956778" duration="2571000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -510,7 +510,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691991990421</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Spring Data JPA">
+      <option name="closed" value="true" />
+      <created>1692158927195</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1692158927195</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

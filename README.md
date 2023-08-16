@@ -1387,6 +1387,18 @@ Connection을 close()해주면 Connection pool에게 되돌려 주는 것이다.
 
 ## Spring JDBC
 
+- 핵심 클래스
+- JdbcTemplate
+- NamedParameterJdbcTemplate
+- SQLExceptionTranslator
+- RowMapper
+
+![img_23.png](img_23.png)
+
+좋은 체계는 단일 책임을 진다.
+
+
+
     
 
 
