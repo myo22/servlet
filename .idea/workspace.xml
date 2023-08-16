@@ -9,8 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="JDBC 프로그래밍에서 트랜잭션, Record Lock이 걸리는 상황">
-      <change afterPath="$PROJECT_DIR$/img_21.png" afterDir="false" />
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Spring Data JPA">
+      <change afterPath="$PROJECT_DIR$/img_22.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -187,7 +187,8 @@
       <workItem from="1691562162621" duration="5611000" />
       <workItem from="1691647889317" duration="2213000" />
       <workItem from="1691728570246" duration="125000" />
-      <workItem from="1691983889692" duration="4223000" />
+      <workItem from="1691983889692" duration="5222000" />
+      <workItem from="1692157956778" duration="864000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -501,14 +502,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691650901006</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Spring Data JPA">
+      <option name="closed" value="true" />
+      <created>1691991990421</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1691991990421</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="서블리에서 JSP로 포워딩하기" />
     <MESSAGE value="서블릿에서 JSP로 포워딩하기" />
     <MESSAGE value="웹 어플리케이션 배포" />
     <MESSAGE value="Spring 프레임워크" />
@@ -533,6 +541,7 @@
     <MESSAGE value="트랜잭션, autu_increamnt, last_insert_id()" />
     <MESSAGE value="JDBC 프로그래밍" />
     <MESSAGE value="JDBC 프로그래밍에서 트랜잭션, Record Lock이 걸리는 상황" />
-    <option name="LAST_COMMIT_MESSAGE" value="JDBC 프로그래밍에서 트랜잭션, Record Lock이 걸리는 상황" />
+    <MESSAGE value="Spring Data JPA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spring Data JPA" />
   </component>
 </project>

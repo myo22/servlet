@@ -1376,10 +1376,16 @@ ex) mysql DBMS에 접속하기 위해서는 JDBC 인터페이스를 구현하고
 
 ---
 
+## dataSource, HikariCP(Connection pool)
 
+![img_22.png](img_22.png)
 
+Connection을 close()해주면 Connection pool에게 되돌려 주는 것이다.
+커넥션을 빠르게 되돌려 주는 것이 핵심이다. -> 안되면 프로그램이 멈춰버린다.
 
+---
 
+## Spring JDBC
 
     
 
