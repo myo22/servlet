@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Spring Data JPA">
-      <change afterPath="$PROJECT_DIR$/img_23.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +50,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/develop/workspace/servletexam",
+    "last_opened_file_path": "C:/develop/workspace/grup-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -188,7 +186,10 @@
       <workItem from="1691647889317" duration="2213000" />
       <workItem from="1691728570246" duration="125000" />
       <workItem from="1691983889692" duration="5222000" />
-      <workItem from="1692157956778" duration="2571000" />
+      <workItem from="1692157956778" duration="2581000" />
+      <workItem from="1692163151170" duration="53000" />
+      <workItem from="1692163223271" duration="56000" />
+      <workItem from="1692171675285" duration="93000" />
     </task>
     <task id="LOCAL-00001" summary="웹 어플리케이션 기본">
       <option name="closed" value="true" />
@@ -518,7 +519,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692158927195</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Spring Data JPA">
+      <option name="closed" value="true" />
+      <created>1692161093438</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1692161093438</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
