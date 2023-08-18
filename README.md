@@ -1403,7 +1403,63 @@ Connection을 close()해주면 Connection pool에게 되돌려 주는 것이다.
 
 ---
 
+# Spring JDBC 프로그래밍
+
+0. DBMS 접속
+1. SQL 작성
+2. SQL 실행 - DBMS 안에서 실행
+3. ResultSet으로 한건씩 읽어와서 처리.
     
+EJB, JPA .....
 
+객체지향적으로 프로그래밍?
 
+SQL을 알아야 할까? SQL은 DBMS마다 다르다. ex) Oracle, MySQL...
 
+User user = new User();
+user.setName("홍길동");
+user.setPhone("010-0000-1111");
+
+UserManager.save(user);
+
+User user = UserManager.find("Phone", "010-0000-1111");
+
+---
+
+SQL 없이도 객체를 가지고 관계를 매핑해주는 기술을 만들자
+
+EJB Entity Bean ----> 복잡하고 힘듬 -----> 2001 Hibernate ORM -----> JPA(ORM 표준 API, 인터페이스) 2006 -----> JPA 2.1 (2013) -----> Spring Data JPA
+                                         .......비슷한 기술 다양        같은 형식을 잡아주는게 JPA이다.
+
+JPA를 구현하고 있는 것이 Hibernate같은 기술이다.
+
+Spring은? JPA와 관련된 객체를 손쉽게 Bean으로 생성할 수 있도록 해주는 것.
+
+Data를 관리하기 위해서 관계형 데이터베이스 - MySQL, Oracle .....
+NoSQL - MongoDB, Redis, LDAP.......
+
+Spring Data는 API가 다른 각각의 기술들(MongoDB, Redis, LDAP)을 같은 방식으로 읽고 쓸 수 있도록 통합한것.
+
+        spring:
+            datasource:
+                url: jdbc:mysql://127.0.0.1:3306/examplesdb?useUnicode=true&serverTimezone=Asia/Seoul
+                username: root
+                password: Rdbckr69173+
+            jpa:
+                hibernate: -> 자동으로 SQL을 만들어주는 기술
+                    ddl-auto: update 자동으로 sql 테이블을 만들어줌
+                properties:
+                    hibernate:
+                        show_sql: true 만들어지는 SQL을 로그로 보여주라
+                        format_sql: true SQL을 정리해서 보여달라
+                database-platform: org.hibernate.dialect.MySQL8Dialect MySQL용으로 문법을 만들기위해 이걸 쓴것. 만약 오라클을 사용한다면 오라클용 SQL생성을 적어줘야한다.
+
+JPA에서 가장 중요한 객체는?
+
+EntityManager <---- EntityManagerFactory
+JPA에서는 EntityManager이용해서 프로그래밍을 한다.
+
+간단한 프로그래밍에서는 SQL문을 몰라도 상관없지만 복잡해지면 JPA도 굉장히 어려워진다.
+그래서 초보자들은 처음부터 JPA보단 SQL을 잘공부해야한다.
+
+---
