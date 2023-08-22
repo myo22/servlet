@@ -1463,3 +1463,29 @@ JPA에서는 EntityManager이용해서 프로그래밍을 한다.
 그래서 초보자들은 처음부터 JPA보단 SQL을 잘공부해야한다.
 
 ---
+
+# EnitiyManagerFactory, EntityManager, DataSource, EntityTransaction의 관계
+
+![img_24.png](img_24.png)
+
+EntityManager는 하나의 스레드에서만 사용해야 한다. 서버는 브라우저에게 요청을 받으면 스레드를 하나 만든다(사용한다.) 
+
+ex)브라우저에서 서버로 10개의 요청이 오면 스레드를 10개가 동시에 동작한다. -> 각각의 스레드별로 EntityManager도 1개씩 사용한다.
+
+# Persistence Context
+
+![img_25.png](img_25.png)
+
+EntityManager의 메소드를 이용해서 CRUD를 수행.
+
+EntityManager는 내부적으로 Persistence Context를 사용한다. 그리고 Persistence Context가 실제 DBMS에게 명령을 실행
+
+EntityManager --> Persistence Context ---> DBMS
+
+    EntityTransaction을 begin()   User에서 실제 메모리 상에서는 유저가 하나 있다.
+    User user ---find()---->    User -----> 스냅샷.(원본의 복사본)
+    User user2 ---find()--->
+    User.setPassword("5678")
+    EntityTransaction을 commit()   현재 user와 스냅샷을 비교. --> 전과 달라졌으니 DBMS에게 너도 바꾸라며 Update문 자동 실행.
+
+** find를 제외하고 CUD는 반드시 트랜잭션 안에서 수행되어야 한다. **
