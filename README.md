@@ -1488,4 +1488,27 @@ EntityManager --> Persistence Context ---> DBMS
     User.setPassword("5678")
     EntityTransaction을 commit()   현재 user와 스냅샷을 비교. --> 전과 달라졌으니 DBMS에게 너도 바꾸라며 Update문 자동 실행.
 
+즉 JPA는 트랜잭션이 끝날 때 변경된 점이 있으면 Update가 진행되는 것이다.
 ** find를 제외하고 CUD는 반드시 트랜잭션 안에서 수행되어야 한다. **
+
+---
+
+# Spring Data JPA를 이용한 Repository 만들기
+
+    package com.example.springdatajpa.repository;
+
+    import com.example.springdatajpa.domain.User;
+    import org.springframework.data.jpa.repository.JpaRepository;
+
+    public interface UserRepository extends JpaRepository<User, Integer> {
+    }
+
+JPARepository를 상속받도록 Repository를 만들으면 이걸 구현해주는 proxy객체가 내부적으로 EntityManager를 이용해서 동작하도록 자동으로 구현해준다.
+
+# method query 만들기
+
+    Optional<User> findByName(String name);
+
+UserRepository에는 이름으로만 찾을수 있는 것이 없을때 이것을 만들어서 이용해준다.
+
+---
