@@ -1586,4 +1586,28 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-me
     // where flag = false
     List<User> findByFlagFalse();
 
+    // select count(*) from user2
+    Long countBy();
+
+    // select count(*) from user2 where name like?
+    Long countByNameLike(String name);
+
+    // where email = ?
+    boolean existsByEmail(String email);
+
+    // select * from user2 where name = ?
+    // select한 건수만큼 delete from user2 where user_id = ?
+    int deleteByName(String name);
+
+    // select distinct * from user2 where name = ?
+    List<User> findDistinctByName(String name);
+
+    // 결과중 2건만 - select * from user2 limit 2
+    List<User> findFirst2By();
+    List<User> findTop2By();
+
+    // 페이징 처리에 대한 정보를 받아들인다.
+    Page<User> findBy(Pageable pageable);
+    Page<User> findByName(String name, Pageable pageable);
+
 ---
