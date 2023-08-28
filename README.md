@@ -1611,3 +1611,44 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-me
     Page<User> findByName(String name, Pageable pageable);
 
 ---
+
+# Entity와 Entity의 관계 - N:N관계, 1:N관계
+
+![img_26.png](img_26.png)
+
+    홍길동 ----------- 일반사용자
+                       관리자
+    고길동 ----------- 일반사용자
+    둘리  ------------  관리자
+    
+    사용자 N ---- N 권한
+         
+    테이블과 테이블은 N:N관계를 맺을 수 없다.
+             (관계테이블)
+    사용자 --- 사용자_권한 --- 권한
+      1         N   N         1
+
+    1 - N                       ex) 회원 <----> 게시물
+    1 - N N - 1 ( N - N )       ex) 회원 <----> 권한
+    1 - 1 (사실 하나의 테이블로 되도 된다.)  ex) 회원정보 <----> 회원상세정보
+
+    class 회원{
+        List<게시물> list;
+        Set<권한> roles;
+        회원상세정보 userDetail;
+    }
+    
+    class 게시물{
+        회원 m;
+    }
+
+    class 권한{
+        Set<회원> user;
+    }
+
+    class 회원상세정보{
+        회원 user;
+    }
+
+---
+    
