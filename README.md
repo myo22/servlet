@@ -1651,4 +1651,9 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-me
     }
 
 ---
+
+# JPQL에서 Native SQL 사용하기
+
+    JPQL로 바꾸기 굉장히 어려운 쿼리는 이렇게 Native SQL로 사용할 수 있다. -> 엔티티 클래스를 사용하지 않고 Getter 메소드를 가지고있는 인터페이스만 정의해준다.(규칙 : 칼럼명과 동일한 Getter 메소드)
     
+---
