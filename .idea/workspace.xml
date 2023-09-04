@@ -9,8 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Entity와 Entity의 관계">
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="JPQL에서 Native SQL 사용하기">
+      <change afterPath="$PROJECT_DIR$/img_27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_30.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,23 +49,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/develop/workspace/servletexam&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/develop/workspace/servletexam",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\develop\workspace\servletexam\src\main\webapp" />
@@ -202,14 +207,10 @@
       <workItem from="1693192128297" duration="2647000" />
       <workItem from="1693199105937" duration="8000" />
       <workItem from="1693386807572" duration="9000" />
-    </task>
-    <task id="LOCAL-00002" summary="웹 어플리케이션 기본">
-      <option name="closed" value="true" />
-      <created>1689518399855</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1689518399855</updated>
+      <workItem from="1693479182246" duration="636000" />
+      <workItem from="1693546353160" duration="1983000" />
+      <workItem from="1693743951277" duration="153000" />
+      <workItem from="1693799633845" duration="1708000" />
     </task>
     <task id="LOCAL-00003" summary="Servlet">
       <option name="closed" value="true" />
@@ -595,14 +596,21 @@
       <option name="project" value="LOCAL" />
       <updated>1693198975217</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="JPQL에서 Native SQL 사용하기">
+      <option name="closed" value="true" />
+      <created>1693481559197</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1693481559197</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Spring 프레임워크" />
     <MESSAGE value="스프링 MVC를 이용한 Hello를 출력한 예제" />
     <MESSAGE value="DefaultServlet" />
     <MESSAGE value="ViewResolver" />
@@ -627,6 +635,7 @@
     <MESSAGE value="Spring Data JPA" />
     <MESSAGE value="Query methods" />
     <MESSAGE value="Entity와 Entity의 관계" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entity와 Entity의 관계" />
+    <MESSAGE value="JPQL에서 Native SQL 사용하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="JPQL에서 Native SQL 사용하기" />
   </component>
 </project>

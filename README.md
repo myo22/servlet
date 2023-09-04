@@ -1657,3 +1657,38 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-me
     JPQL로 바꾸기 굉장히 어려운 쿼리는 이렇게 Native SQL로 사용할 수 있다. -> 엔티티 클래스를 사용하지 않고 Getter 메소드를 가지고있는 인터페이스만 정의해준다.(규칙 : 칼럼명과 동일한 Getter 메소드)
     
 ---
+
+# 웹 어플리케이션의 종류
+
+- 화면으로 응답하는 애플리케이션
+    - @Controller 애노테이션 사용
+- 데이터로 응답하는 애플리케이션 ex) xml, json데이터
+    - @RestController 애노테이션 사용
+
+![img_27.png](img_27.png)
+
+![img_28.png](img_28.png)
+java script가 보통 JSON을 읽는다.
+
+---
+
+# Spring MVC
+
+- MVC는 Model-View-Controller의 약자입니다.
+![img_29.png](img_29.png)
+
+비즈니스로직, 데이터에 데한 처리를 Model에다가 맡긴다. -> Controller
+
+Controller가 View(HTML or JSON(DTO 변환))를 통해서 브라우저에게 응답해준다.
+
+- Model : 애플리케이션 상태(데이터)나 비즈니스 로직을 제공하는 컴포넌트.
+- View : 모델이 보유한 애플리케이션 상태(데이터)를 참고하고 클라이언트에 반환할 응답 데이터를 생성하는 컴포넌트.
+- Controller : 요청을 받아 모델과 뷰의 호출을 제어하는 컴포넌트로 컨트롤러라는 이름처럼 요청과 응답의 처리흐름을 제어한다.
+
+## Spring Web Module
+- MVC 패턴을 지원하는 Spring Module
+![img_30.png](img_30.png)
+
+- 웹 어플리케이션 또는 웹 앱은 소프트웨어 공학적 관점에서 인터넷이나 인트라넷을 통해 웹브라우저에서 이용할 수 있는 응용 소프트웨어를 말한다.
+
+---
