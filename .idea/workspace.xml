@@ -55,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/develop/workspace/servletexam",
+    "last_opened_file_path": "C:/Users/user/develop/workspace/servlet",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -211,6 +211,7 @@
       <workItem from="1693546353160" duration="1983000" />
       <workItem from="1693743951277" duration="153000" />
       <workItem from="1693799633845" duration="1708000" />
+      <workItem from="1693956862451" duration="1488000" />
     </task>
     <task id="LOCAL-00003" summary="Servlet">
       <option name="closed" value="true" />

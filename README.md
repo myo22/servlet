@@ -1692,3 +1692,22 @@ Controller가 View(HTML or JSON(DTO 변환))를 통해서 브라우저에게 응
 - 웹 어플리케이션 또는 웹 앱은 소프트웨어 공학적 관점에서 인터넷이나 인트라넷을 통해 웹브라우저에서 이용할 수 있는 응용 소프트웨어를 말한다.
 
 ---
+
+# DispatcherServlet
+![img_31.png](img_31.png)
+
+@Controller가 붙은 클래스에서 실행되는 메소드가 핸들러이다.
+
+![img_32.png](img_32.png)
+
+- 요청 선처리 작업
+- ![img_33.png](img_33.png)
+
+Locale: 지역화, I18N, 언어, 시간대....
+
+FlashMap 복원은 redirect와 관련.
+
+멀티파트: 파일업로드를 Form을 통해서 할 때 POST방식으로 여러 부분으로 나눠서 온다.
+
+![img_34.png](img_34.png)
+
