@@ -1700,15 +1700,33 @@ Controller가 View(HTML or JSON(DTO 변환))를 통해서 브라우저에게 응
 
 ![img_32.png](img_32.png)
 
-- 요청 선처리 작업
+요청 선처리 작업
 - ![img_33.png](img_33.png)
+- Locale: 지역화, I18N, 언어, 시간대.... 
+- FlashMap 복원은 redirect와 관련. 
+- 멀티파트: 파일업로드를 Form을 통해서 할 때 POST방식으로 여러 부분으로 나눠서 온다.
 
-Locale: 지역화, I18N, 언어, 시간대....
+Handler ExecutionChain 결정
+- ![img_34.png](img_34.png)
+- Controller들이 붙어있는 핸들러인 메소드를 찾아서 스프링이 내부적으로 메모리에 올려놓는다. 
+- DispatcherServlet는 뭐가 실행되야하는지 RequestMapping을 통해서 알게된다. 
+- 예를들어 /hello 요청이 들어오면 처리해줄수있는 HandlerAdapter를 결정한다.
+- 즉 HandlerMapping이 사용된다.
+- DispatcherServlet은 어떤 URL요청이 올때 어떤 Handler가 실행될지 알고 있다.
 
-FlashMap 복원은 redirect와 관련.
+Handler ExecutionChain 실행
+- ![img_35.png](img_35.png)
+- ![img_36.png](img_36.png)
 
-멀티파트: 파일업로드를 Form을 통해서 할 때 POST방식으로 여러 부분으로 나눠서 온다.
+예외발생
+- ![img_37.png](img_37.png) 
 
-![img_34.png](img_34.png)
+뷰 랜더링
+- ![img_38.png](img_38.png)
+- view 구현체가 없으면 ServletException을 던지고 있으면 그 구현체로 랜더링 하는 것이다.
+- view 구현체는 thymeleaf, jsp...등등
+
+요청 처리 종료
+- ![img_39.png](img_39.png)
 
 ---
