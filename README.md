@@ -1732,4 +1732,14 @@ Handler ExecutionChain 실행
 ---
 
 # Controller 핸들러 파라미터에 올 수 있는 객체들.
+![img_40.png](img_40.png)
+MultipartRequest는 form을 통해서 파일을 업로드할때 사용된다
+HtppSession 세션 정보를 읽어들일 때 사용된다.
+![img_41.png](img_41.png)
+Locale은 언어 정보 같은걸 읽어온다.
+Model은 일반적인 Controller에서 템플릿에게 값을 전달해줄 때 사용된다.
+![img_43.png](img_43.png)
+MultipartFile역시 파일 업로드할때 사용된다.
+![img_42.png](img_42.png)
 
+---
