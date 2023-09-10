@@ -1743,3 +1743,10 @@ MultipartFile역시 파일 업로드할때 사용된다.
 ![img_42.png](img_42.png)
 
 ---
+
+# Controller 핸들러 파라미터에서 사용하는 애노테이션
+![img_44.png](img_44.png)
+![img_45.png](img_45.png)
+![img_46.png](img_46.png)
+
+---
