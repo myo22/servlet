@@ -1828,6 +1828,8 @@ Database
 Spring
 웹......
 
+# 포르폴리오를 만들어보자.
+
 프론트개발을 공부하는 사람. -> fake api
 API가 있으면 좋겠다. -> API는 백엔드 개발자가 만드는 것.
 - https://fakestoreapi.com/
@@ -1846,7 +1848,7 @@ API가 있으면 좋겠다. -> API는 백엔드 개발자가 만드는 것.
   - jewelery 아래에 있는 product 목록을 가지고옴.
 등등 기능들이 있다.
   
-## 그러나 해당 API를 똑같이 만들 필요는 없다.
+### 그러나 해당 API를 똑같이 만들 필요는 없다.
 1. 내가 만들 API를 정의한다.
    - GET /products {...} 가상의 데이터를 정의한다.
    - POST /products
