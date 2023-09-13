@@ -1821,3 +1821,53 @@ Controller에서 중복되는 부분을 처리하려면?
 - 만약 이게 익숙해지면 머릿속에서 일어나는 것인데 초보자인경우는 만드는게 좋고, 아무리 익숙해져도 와이어프레임을 그리고 명세서를 작성하는건 다 한다.
 
 ---
+
+Java 백엔드 개발자가 되고 싶다.
+Java 기본 프로그래밍
+Database
+Spring
+웹......
+
+프론트개발을 공부하는 사람. -> fake api
+API가 있으면 좋겠다. -> API는 백엔드 개발자가 만드는 것.
+- https://fakestoreapi.com/
+- 위의 URL을 보고 같은 기능을 하는 Web API를 만들어보자.
+- GET /products
+  - 모든 데이터 product
+- GET /products/1
+  - id가 1인 product
+- GET /products?limit=5
+  - 5건의 데이터를 읽어온다.
+- GET /products?sort=desc
+  - 내림차순으로 읽어온다.
+- GET /products/categories
+  - 카테고리 정보(분류명)를 읽어온다.
+- GET /products/category/jewelery
+  - jewelery 아래에 있는 product 목록을 가지고옴.
+등등 기능들이 있다.
+  
+## 그러나 해당 API를 똑같이 만들 필요는 없다.
+1. 내가 만들 API를 정의한다.
+   - GET /products {...} 가상의 데이터를 정의한다.
+   - POST /products
+   - data : {...}
+   - result : {...}
+
+2. 동일하게 만들 필요는 없지만, 너무 다르게 만들진 말자.
+3. Web API부터 고민할 수 있다.
+    - Controller부터 만들고, List<Product> list = new ArrayList<>();
+    - 가짜 데이터를 list에 저장하고 반환.
+3. 어떤 데이터가 저장되야 할까? 
+   - DB 모델링을 생각한다. 또는 Entity를 생각한다.
+즉 Controller부터 쭉 내려가면서 생각하거나 데이터부터 생각해서 Entity부터 만들고 역순으로 위로 올라가면서 만들 수 있다.
+
+#### API 테스트는 어떻게 할까?
+- Test 코드를 만든다. <- 좋은 방법이지만 초보자는 어려울 수 있다.
+- API를 만든다면, Postman을 이용해서 수동으로 테스트한다.
+    - 수동으로 테스트하다보면 자동이 그리워지므로 그때 공부하자.
+    - 혹은 API문서화에 대한 내용도 궁금해질 수 있다.
+
+https://open.kakao.com/o/gcbnd3le
+    - 본인의 github 주소에 자신의 작업 내용을 올려보자.
+    - 작업하는게 안풀리면 질문도 하자.
+---
