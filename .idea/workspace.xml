@@ -9,13 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Controller 핸들러 파라미터에 올 수 있는 객체들.">
-      <change afterPath="$PROJECT_DIR$/img_47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_49.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_52.png" afterDir="false" />
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="레이어드 아키텍처란?">
+      <change afterPath="$PROJECT_DIR$/img_53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_54.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -57,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/develop/workspace/SpringBoot-Srping-MVC",
+    "last_opened_file_path": "C:/Users/user/develop/workspace/servlet",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -221,14 +217,7 @@
       <workItem from="1694067914881" duration="111000" />
       <workItem from="1694068071485" duration="51000" />
       <workItem from="1694070528176" duration="304000" />
-    </task>
-    <task id="LOCAL-00008" summary="Spring 프레임워크">
-      <option name="closed" value="true" />
-      <created>1689750976307</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1689750976307</updated>
+      <workItem from="1694573998138" duration="526000" />
     </task>
     <task id="LOCAL-00009" summary="스프링 MVC를 이용한 Hello를 출력한 예제">
       <option name="closed" value="true" />
@@ -609,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694067265685</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="레이어드 아키텍처란?">
+      <created>1694563266142</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1694563266142</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +623,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ViewResolver" />
     <MESSAGE value="Database 프로그래밍" />
     <MESSAGE value="Spring Data JAP" />
     <MESSAGE value="스프링 웹 애플리케이션" />
@@ -652,6 +647,7 @@
     <MESSAGE value="JPQL에서 Native SQL 사용하기" />
     <MESSAGE value="DispatcherServlet" />
     <MESSAGE value="Controller 핸들러 파라미터에 올 수 있는 객체들." />
-    <option name="LAST_COMMIT_MESSAGE" value="Controller 핸들러 파라미터에 올 수 있는 객체들." />
+    <MESSAGE value="레이어드 아키텍처란?" />
+    <option name="LAST_COMMIT_MESSAGE" value="레이어드 아키텍처란?" />
   </component>
 </project>
