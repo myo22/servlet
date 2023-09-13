@@ -9,10 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Spring MVC">
-      <change afterPath="$PROJECT_DIR$/img_44.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_46.png" afterDir="false" />
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="Controller 핸들러 파라미터에 올 수 있는 객체들.">
+      <change afterPath="$PROJECT_DIR$/img_47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_52.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -54,7 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/develop/workspace/webexam",
+    "last_opened_file_path": "C:/Users/user/develop/workspace/SpringBoot-Srping-MVC",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
