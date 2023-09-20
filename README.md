@@ -1873,3 +1873,26 @@ https://open.kakao.com/o/gcbnd3le
     - 본인의 github 주소에 자신의 작업 내용을 올려보자.
     - 작업하는게 안풀리면 질문도 하자.
 ---
+
+프로그래밍이란?
+- 스스로 학습
+- Spring Security - 기본적인 학습
+- 방향성
+- 포트폴리오는 스스로 만든다.
+
+![img_55.png](img_55.png)
+- ![img_56.png](img_56.png)
+- jwt라는 토큰값을 요청에 담아서 보내는 것이다.
+- 로그인 하면 jwt 토큰값을 어떤 형태로는 응답을 받는다.
+- 이 토큰값을 요청을 보낼때마다 헤더에다가 담아서 보내게 된다.
+- jwt 토큰에 사용자 정보가 들어가 있기 때문에 기존 시크리티처럼 UserDetailsService는 사용하지 않는다.
+- AuthenticationProvider에서 jwt토큰을 파싱해서 사용자 정보를 꺼내서 인증 처리를 한다.
+
+![img_58.png](img_58.png)
+- 기존의 AuthenticationFilter -> JWTAuthenticationFilter를 만들 것 이다.
+
+![img_59.png](img_59.png)
+- 특정 유형의 인증을 수행하는 것.
+
+![img_60.png](img_60.png)
+- UsernamePasswordAuthenticationToken 대신에 JWTAuthenticationToken이 들어온다.

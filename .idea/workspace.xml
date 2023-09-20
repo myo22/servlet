@@ -9,7 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="레이어드 아키텍처란? - Web API를 만들기 위한 과정">
+    <list default="true" id="2c805e8b-e176-4eb5-ad31-c802d36c1da9" name="변경" comment="백엔드 프로그래밍">
+      <change afterPath="$PROJECT_DIR$/img_55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img_61.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-09-13__8_31___.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-09-13_오전_8_31_[변경]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -216,23 +224,8 @@
       <workItem from="1694068071485" duration="51000" />
       <workItem from="1694070528176" duration="304000" />
       <workItem from="1694573998138" duration="596000" />
-      <workItem from="1694647909735" duration="1564000" />
-    </task>
-    <task id="LOCAL-00010" summary="DefaultServlet">
-      <option name="closed" value="true" />
-      <created>1689835594414</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1689835594414</updated>
-    </task>
-    <task id="LOCAL-00011" summary="ViewResolver">
-      <option name="closed" value="true" />
-      <created>1689839273906</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1689839273906</updated>
+      <workItem from="1694647909735" duration="1682000" />
+      <workItem from="1695166999616" duration="1409000" />
     </task>
     <task id="LOCAL-00012" summary="Database 프로그래밍">
       <option name="closed" value="true" />
@@ -603,7 +596,21 @@
       <option name="project" value="LOCAL" />
       <updated>1694574569772</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary=" 백엔드 프로그래밍">
+      <created>1694649546819</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1694649546819</updated>
+    </task>
+    <task id="LOCAL-00060" summary="백엔드 프로그래밍">
+      <created>1694649586203</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1694649586203</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -621,8 +628,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Spring Data JAP" />
-    <MESSAGE value="스프링 웹 애플리케이션" />
     <MESSAGE value="SQL부터 Spring Data JPA까지" />
     <MESSAGE value="SQL 숫자 관련 함수" />
     <MESSAGE value="mysql 날짜 포멧팅 기호" />
@@ -646,6 +651,8 @@
     <MESSAGE value="Controller 핸들러 파라미터에 올 수 있는 객체들." />
     <MESSAGE value="레이어드 아키텍처란?" />
     <MESSAGE value="레이어드 아키텍처란? - Web API를 만들기 위한 과정" />
-    <option name="LAST_COMMIT_MESSAGE" value="레이어드 아키텍처란? - Web API를 만들기 위한 과정" />
+    <MESSAGE value=" 백엔드 프로그래밍" />
+    <MESSAGE value="백엔드 프로그래밍" />
+    <option name="LAST_COMMIT_MESSAGE" value="백엔드 프로그래밍" />
   </component>
 </project>
