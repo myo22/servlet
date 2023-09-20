@@ -1880,6 +1880,7 @@ https://open.kakao.com/o/gcbnd3le
 - 방향성
 - 포트폴리오는 스스로 만든다.
 
+#  Spring Security를 이용해 JWT로그인
 ![img_55.png](img_55.png)
 - ![img_56.png](img_56.png)
 - jwt라는 토큰값을 요청에 담아서 보내는 것이다.
@@ -1896,3 +1897,11 @@ https://open.kakao.com/o/gcbnd3le
 
 ![img_60.png](img_60.png)
 - UsernamePasswordAuthenticationToken 대신에 JWTAuthenticationToken이 들어온다.
+
+#### 그 다음?
+- 사용자 - 권한 테이블을 만들고 이 정보를 읽어들여서 로그인 할때 사용하여 올바른 로그인 정보인지 검증.
+- 리플래시 토큰을 사용하려면 어떻게 하지? 리플래시 토큰 개념을 이해. 리플래시 토큰을 DB에서 관리 한다.
+- 응답으로 온 데이터 자체를 cookie의 값으로 설정하여 리턴. 보안이 중요하다면 https, secure설정, http only 설정 (생략)
+- JWT안의 sub값에 암호화하여 사용자 아이디, 권한 정보등을 넣어주는 것이 좋다.(생략)
+
+---
