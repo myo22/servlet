@@ -1905,3 +1905,22 @@ https://open.kakao.com/o/gcbnd3le
 - JWT안의 sub값에 암호화하여 사용자 아이디, 권한 정보등을 넣어주는 것이 좋다.(생략)
 
 ---
+# JWT
+
+![img_62.png](img_62.png)
+![img_63.png](img_63.png)
+![img_64.png](img_64.png)
+
+![img_65.png](img_65.png)
+![img_66.png](img_66.png)
+- ![img_67.png](img_67.png)
+- ![img_68.png](img_68.png)
+- ![img_69.png](img_69.png)
+- ![img_70.png](img_70.png) 페이로드에 들어가있는게 클레임이다.
+- ![img_71.png](img_71.png)
+- ![img_72.png](img_72.png)
+- ![img_73.png](img_73.png)
+
+![img_74.png](img_74.png)
+
+---
