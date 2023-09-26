@@ -1924,3 +1924,17 @@ https://open.kakao.com/o/gcbnd3le
 ![img_74.png](img_74.png)
 
 ---
+
+#### 회원가입
+- ![img_75.png](img_75.png)
+#### 로그인
+- ![img_76.png](img_76.png)
+#### 로그아웃
+- ![img_77.png](img_77.png)
+#### 액세스 토큰 갱신
+- ![img_78.png](img_78.png)
+- 액세스 토큰 생존시간이 5분이면? 이 요청을 최소 5분안에 매번 보내서 액세스 토큰을 발급받아야 한다.
+
+Spring Security가 JWT인증검사를 하는 역할을 수행한다.
+
+---
